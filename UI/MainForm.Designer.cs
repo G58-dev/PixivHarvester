@@ -28,12 +28,126 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            menuStrip = new MenuStrip();
+            pHPSESSIDToolStripMenuItem = new ToolStripMenuItem();
+            updateToolStripMenuItem = new ToolStripMenuItem();
+            themeToolStripMenuItem = new ToolStripMenuItem();
+            lightToolStripMenuItem = new ToolStripMenuItem();
+            darkToolStripMenuItem = new ToolStripMenuItem();
+            superDarkToolStripMenuItem = new ToolStripMenuItem();
+            aboutToolStripMenuItem = new ToolStripMenuItem();
+            creditsToolStripMenuItem = new ToolStripMenuItem();
+            versionToolStripMenuItem = new ToolStripMenuItem();
+            panelMain = new Panel();
+            menuStrip.SuspendLayout();
+            SuspendLayout();
+            // 
+            // menuStrip
+            // 
+            menuStrip.Items.AddRange(new ToolStripItem[] { pHPSESSIDToolStripMenuItem, themeToolStripMenuItem, aboutToolStripMenuItem });
+            menuStrip.Location = new Point(0, 0);
+            menuStrip.Name = "menuStrip";
+            menuStrip.Size = new Size(800, 24);
+            menuStrip.TabIndex = 0;
+            menuStrip.Text = "menuStrip1";
+            // 
+            // pHPSESSIDToolStripMenuItem
+            // 
+            pHPSESSIDToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { updateToolStripMenuItem });
+            pHPSESSIDToolStripMenuItem.Name = "pHPSESSIDToolStripMenuItem";
+            pHPSESSIDToolStripMenuItem.Size = new Size(77, 20);
+            pHPSESSIDToolStripMenuItem.Text = "PHPSESSID";
+            // 
+            // updateToolStripMenuItem
+            // 
+            updateToolStripMenuItem.Name = "updateToolStripMenuItem";
+            updateToolStripMenuItem.Size = new Size(180, 22);
+            updateToolStripMenuItem.Text = "Update";
+            // 
+            // themeToolStripMenuItem
+            // 
+            themeToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { lightToolStripMenuItem, darkToolStripMenuItem, superDarkToolStripMenuItem });
+            themeToolStripMenuItem.Name = "themeToolStripMenuItem";
+            themeToolStripMenuItem.Size = new Size(55, 20);
+            themeToolStripMenuItem.Text = "Theme";
+            // 
+            // lightToolStripMenuItem
+            // 
+            lightToolStripMenuItem.Name = "lightToolStripMenuItem";
+            lightToolStripMenuItem.Size = new Size(180, 22);
+            lightToolStripMenuItem.Text = "Light";
+            // 
+            // darkToolStripMenuItem
+            // 
+            darkToolStripMenuItem.Name = "darkToolStripMenuItem";
+            darkToolStripMenuItem.Size = new Size(180, 22);
+            darkToolStripMenuItem.Text = "Dark";
+            // 
+            // superDarkToolStripMenuItem
+            // 
+            superDarkToolStripMenuItem.Name = "superDarkToolStripMenuItem";
+            superDarkToolStripMenuItem.Size = new Size(180, 22);
+            superDarkToolStripMenuItem.Text = "Super Dark";
+            // 
+            // aboutToolStripMenuItem
+            // 
+            aboutToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { creditsToolStripMenuItem, versionToolStripMenuItem });
+            aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            aboutToolStripMenuItem.Size = new Size(52, 20);
+            aboutToolStripMenuItem.Text = "About";
+            // 
+            // creditsToolStripMenuItem
+            // 
+            creditsToolStripMenuItem.Name = "creditsToolStripMenuItem";
+            creditsToolStripMenuItem.Size = new Size(180, 22);
+            creditsToolStripMenuItem.Text = "Credits";
+            // 
+            // versionToolStripMenuItem
+            // 
+            versionToolStripMenuItem.Name = "versionToolStripMenuItem";
+            versionToolStripMenuItem.Size = new Size(180, 22);
+            versionToolStripMenuItem.Text = "Version";
+            // 
+            // panelMain
+            // 
+            panelMain.Dock = DockStyle.Fill;
+            panelMain.Location = new Point(0, 24);
+            panelMain.Name = "panelMain";
+            panelMain.Size = new Size(800, 426);
+            panelMain.TabIndex = 1;
+            // 
+            // MainForm
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(panelMain);
+            Controls.Add(menuStrip);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MainMenuStrip = menuStrip;
+            MaximizeBox = false;
+            Name = "MainForm";
+            Text = "Pixiv Harvester | v0.1.0-indev";
+            menuStrip.ResumeLayout(false);
+            menuStrip.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private MenuStrip menuStrip;
+        private ToolStripMenuItem pHPSESSIDToolStripMenuItem;
+        private ToolStripMenuItem updateToolStripMenuItem;
+        private ToolStripMenuItem themeToolStripMenuItem;
+        private ToolStripMenuItem lightToolStripMenuItem;
+        private ToolStripMenuItem darkToolStripMenuItem;
+        private ToolStripMenuItem superDarkToolStripMenuItem;
+        private ToolStripMenuItem aboutToolStripMenuItem;
+        private ToolStripMenuItem creditsToolStripMenuItem;
+        private ToolStripMenuItem versionToolStripMenuItem;
+        private Panel panelMain;
     }
 }
