@@ -44,7 +44,7 @@
             // buttonLogIn
             // 
             buttonLogIn.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            buttonLogIn.Location = new Point(103, 322);
+            buttonLogIn.Location = new Point(121, 335);
             buttonLogIn.Name = "buttonLogIn";
             buttonLogIn.Size = new Size(262, 41);
             buttonLogIn.TabIndex = 0;
@@ -60,13 +60,13 @@
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(469, 450);
+            panel1.Size = new Size(505, 426);
             panel1.TabIndex = 1;
             // 
             // pictureBoxIcon
             // 
             pictureBoxIcon.Image = Properties.Resources.favicon;
-            pictureBoxIcon.Location = new Point(159, 50);
+            pictureBoxIcon.Location = new Point(177, 50);
             pictureBoxIcon.Name = "pictureBoxIcon";
             pictureBoxIcon.Size = new Size(150, 150);
             pictureBoxIcon.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -76,17 +76,17 @@
             // textBoxEnterSession
             // 
             textBoxEnterSession.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBoxEnterSession.Location = new Point(81, 255);
+            textBoxEnterSession.Location = new Point(26, 257);
             textBoxEnterSession.Name = "textBoxEnterSession";
             textBoxEnterSession.PlaceholderText = "PHPSESSID";
-            textBoxEnterSession.Size = new Size(307, 33);
+            textBoxEnterSession.Size = new Size(452, 33);
             textBoxEnterSession.TabIndex = 2;
             // 
             // labelEnterSession
             // 
             labelEnterSession.AutoSize = true;
             labelEnterSession.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelEnterSession.Location = new Point(136, 227);
+            labelEnterSession.Location = new Point(154, 229);
             labelEnterSession.Name = "labelEnterSession";
             labelEnterSession.Size = new Size(197, 25);
             labelEnterSession.TabIndex = 1;
@@ -96,9 +96,9 @@
             // 
             panel2.Controls.Add(pictureBoxBanner);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(469, 0);
+            panel2.Location = new Point(505, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(331, 450);
+            panel2.Size = new Size(295, 426);
             panel2.TabIndex = 2;
             // 
             // pictureBoxBanner
@@ -106,7 +106,7 @@
             pictureBoxBanner.Dock = DockStyle.Fill;
             pictureBoxBanner.Location = new Point(0, 0);
             pictureBoxBanner.Name = "pictureBoxBanner";
-            pictureBoxBanner.Size = new Size(331, 450);
+            pictureBoxBanner.Size = new Size(295, 426);
             pictureBoxBanner.TabIndex = 0;
             pictureBoxBanner.TabStop = false;
             // 
@@ -114,7 +114,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 426);
             Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
