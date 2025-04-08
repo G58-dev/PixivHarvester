@@ -130,6 +130,7 @@
             MaximizeBox = false;
             Name = "MainForm";
             Text = "Pixiv Harvester | v0.1.0-indev";
+            Load += MainForm_Load;
             menuStrip.ResumeLayout(false);
             menuStrip.PerformLayout();
             ResumeLayout(false);
