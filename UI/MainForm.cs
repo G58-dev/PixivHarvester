@@ -13,7 +13,7 @@ namespace UI
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            Login login = new Login();
+            Login login = new();
             login.Dock = DockStyle.Fill;
             login.TopLevel = false;
             MainPanel.Controls.Clear();
