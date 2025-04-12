@@ -30,16 +30,6 @@
         {
             panelDownload = new Panel();
             panelInnerDownloaded = new Panel();
-            textBoxDownloaded = new TextBox();
-            buttonFolder = new Button();
-            progressBarDownloading = new ProgressBar();
-            textBoxFolder = new TextBox();
-            labelDownloading = new Label();
-            textBoxId = new TextBox();
-            buttonCancel = new Button();
-            buttonId = new Button();
-            buttonStop = new Button();
-            buttonStart = new Button();
             panelQueue = new Panel();
             panelInnerQueue = new Panel();
             buttonRemoveAll = new Button();
@@ -51,6 +41,19 @@
             pictureBoxUser = new PictureBox();
             labelUserId = new Label();
             labelName = new Label();
+            buttonStart = new Button();
+            buttonStop = new Button();
+            buttonId = new Button();
+            buttonCancel = new Button();
+            textBoxId = new TextBox();
+            labelDownloading = new Label();
+            textBoxFolder = new TextBox();
+            progressBarDownloading = new ProgressBar();
+            buttonFolder = new Button();
+            textBoxDownloaded = new TextBox();
+            labelNameValue = new Label();
+            labelUserIdValue = new Label();
+            labelUserIllustsValue = new Label();
             panelDownload.SuspendLayout();
             panelInnerDownloaded.SuspendLayout();
             panelQueue.SuspendLayout();
@@ -92,97 +95,6 @@
             panelInnerDownloaded.Size = new Size(420, 386);
             panelInnerDownloaded.TabIndex = 10;
             // 
-            // textBoxDownloaded
-            // 
-            textBoxDownloaded.Location = new Point(15, 172);
-            textBoxDownloaded.Margin = new Padding(0);
-            textBoxDownloaded.Name = "textBoxDownloaded";
-            textBoxDownloaded.Size = new Size(100, 23);
-            textBoxDownloaded.TabIndex = 9;
-            // 
-            // buttonFolder
-            // 
-            buttonFolder.Location = new Point(15, 15);
-            buttonFolder.Margin = new Padding(0);
-            buttonFolder.Name = "buttonFolder";
-            buttonFolder.Size = new Size(75, 23);
-            buttonFolder.TabIndex = 0;
-            buttonFolder.Text = "Choose Folder";
-            buttonFolder.UseVisualStyleBackColor = true;
-            // 
-            // progressBarDownloading
-            // 
-            progressBarDownloading.Location = new Point(15, 131);
-            progressBarDownloading.Margin = new Padding(0);
-            progressBarDownloading.Name = "progressBarDownloading";
-            progressBarDownloading.Size = new Size(100, 23);
-            progressBarDownloading.TabIndex = 8;
-            // 
-            // textBoxFolder
-            // 
-            textBoxFolder.Location = new Point(99, 15);
-            textBoxFolder.Margin = new Padding(0);
-            textBoxFolder.Name = "textBoxFolder";
-            textBoxFolder.Size = new Size(100, 23);
-            textBoxFolder.TabIndex = 1;
-            // 
-            // labelDownloading
-            // 
-            labelDownloading.AutoSize = true;
-            labelDownloading.Location = new Point(15, 116);
-            labelDownloading.Name = "labelDownloading";
-            labelDownloading.Size = new Size(38, 15);
-            labelDownloading.TabIndex = 7;
-            labelDownloading.Text = "label1";
-            // 
-            // textBoxId
-            // 
-            textBoxId.Location = new Point(15, 47);
-            textBoxId.Margin = new Padding(0);
-            textBoxId.Name = "textBoxId";
-            textBoxId.Size = new Size(100, 23);
-            textBoxId.TabIndex = 2;
-            // 
-            // buttonCancel
-            // 
-            buttonCancel.Location = new Point(183, 78);
-            buttonCancel.Margin = new Padding(0);
-            buttonCancel.Name = "buttonCancel";
-            buttonCancel.Size = new Size(75, 23);
-            buttonCancel.TabIndex = 6;
-            buttonCancel.Text = "Cancel";
-            buttonCancel.UseVisualStyleBackColor = true;
-            // 
-            // buttonId
-            // 
-            buttonId.Location = new Point(124, 47);
-            buttonId.Margin = new Padding(0);
-            buttonId.Name = "buttonId";
-            buttonId.Size = new Size(75, 23);
-            buttonId.TabIndex = 3;
-            buttonId.Text = "Add ID";
-            buttonId.UseVisualStyleBackColor = true;
-            // 
-            // buttonStop
-            // 
-            buttonStop.Location = new Point(99, 78);
-            buttonStop.Margin = new Padding(0);
-            buttonStop.Name = "buttonStop";
-            buttonStop.Size = new Size(75, 23);
-            buttonStop.TabIndex = 5;
-            buttonStop.Text = "Stop";
-            buttonStop.UseVisualStyleBackColor = true;
-            // 
-            // buttonStart
-            // 
-            buttonStart.Location = new Point(15, 78);
-            buttonStart.Margin = new Padding(0);
-            buttonStart.Name = "buttonStart";
-            buttonStart.Size = new Size(75, 23);
-            buttonStart.TabIndex = 4;
-            buttonStart.Text = "Start";
-            buttonStart.UseVisualStyleBackColor = true;
-            // 
             // panelQueue
             // 
             panelQueue.BackColor = SystemColors.Control;
@@ -192,7 +104,7 @@
             panelQueue.Margin = new Padding(0);
             panelQueue.Name = "panelQueue";
             panelQueue.Padding = new Padding(10, 20, 20, 10);
-            panelQueue.Size = new Size(350, 225);
+            panelQueue.Size = new Size(350, 266);
             panelQueue.TabIndex = 1;
             // 
             // panelInnerQueue
@@ -205,36 +117,40 @@
             panelInnerQueue.Margin = new Padding(0);
             panelInnerQueue.Name = "panelInnerQueue";
             panelInnerQueue.Padding = new Padding(15);
-            panelInnerQueue.Size = new Size(320, 195);
+            panelInnerQueue.Size = new Size(320, 236);
             panelInnerQueue.TabIndex = 11;
             // 
             // buttonRemoveAll
             // 
-            buttonRemoveAll.Location = new Point(230, 47);
+            buttonRemoveAll.Font = new Font("Segoe UI", 14.25F);
+            buttonRemoveAll.Location = new Point(188, 125);
             buttonRemoveAll.Margin = new Padding(0);
             buttonRemoveAll.Name = "buttonRemoveAll";
-            buttonRemoveAll.Size = new Size(75, 23);
+            buttonRemoveAll.Size = new Size(117, 94);
             buttonRemoveAll.TabIndex = 2;
-            buttonRemoveAll.Text = "button1";
+            buttonRemoveAll.Text = "Remove All";
             buttonRemoveAll.UseVisualStyleBackColor = true;
             // 
             // listBoxQueue
             // 
+            listBoxQueue.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             listBoxQueue.FormattingEnabled = true;
+            listBoxQueue.HorizontalScrollbar = true;
             listBoxQueue.Location = new Point(15, 15);
             listBoxQueue.Margin = new Padding(0);
             listBoxQueue.Name = "listBoxQueue";
-            listBoxQueue.Size = new Size(120, 94);
+            listBoxQueue.Size = new Size(160, 204);
             listBoxQueue.TabIndex = 3;
             // 
             // buttonRemove
             // 
-            buttonRemove.Location = new Point(230, 15);
+            buttonRemove.Font = new Font("Segoe UI", 14.25F);
+            buttonRemove.Location = new Point(188, 15);
             buttonRemove.Margin = new Padding(0);
             buttonRemove.Name = "buttonRemove";
-            buttonRemove.Size = new Size(75, 23);
+            buttonRemove.Size = new Size(117, 94);
             buttonRemove.TabIndex = 1;
-            buttonRemove.Text = "button1";
+            buttonRemove.Text = "Remove";
             buttonRemove.UseVisualStyleBackColor = true;
             // 
             // panelUserInfo
@@ -242,16 +158,19 @@
             panelUserInfo.BackColor = SystemColors.Control;
             panelUserInfo.Controls.Add(panelInnerUserInfo);
             panelUserInfo.Dock = DockStyle.Fill;
-            panelUserInfo.Location = new Point(450, 225);
+            panelUserInfo.Location = new Point(450, 266);
             panelUserInfo.Margin = new Padding(0);
             panelUserInfo.Name = "panelUserInfo";
             panelUserInfo.Padding = new Padding(10, 10, 20, 20);
-            panelUserInfo.Size = new Size(350, 201);
+            panelUserInfo.Size = new Size(350, 160);
             panelUserInfo.TabIndex = 2;
             // 
             // panelInnerUserInfo
             // 
             panelInnerUserInfo.BackColor = SystemColors.ControlLightLight;
+            panelInnerUserInfo.Controls.Add(labelUserIllustsValue);
+            panelInnerUserInfo.Controls.Add(labelUserIdValue);
+            panelInnerUserInfo.Controls.Add(labelNameValue);
             panelInnerUserInfo.Controls.Add(labelUserIllusts);
             panelInnerUserInfo.Controls.Add(pictureBoxUser);
             panelInnerUserInfo.Controls.Add(labelUserId);
@@ -260,17 +179,18 @@
             panelInnerUserInfo.Margin = new Padding(0);
             panelInnerUserInfo.Name = "panelInnerUserInfo";
             panelInnerUserInfo.Padding = new Padding(15);
-            panelInnerUserInfo.Size = new Size(320, 171);
+            panelInnerUserInfo.Size = new Size(320, 130);
             panelInnerUserInfo.TabIndex = 12;
             // 
             // labelUserIllusts
             // 
             labelUserIllusts.AutoSize = true;
-            labelUserIllusts.Location = new Point(162, 73);
+            labelUserIllusts.Font = new Font("Segoe UI", 12F);
+            labelUserIllusts.Location = new Point(120, 93);
             labelUserIllusts.Name = "labelUserIllusts";
-            labelUserIllusts.Size = new Size(38, 15);
+            labelUserIllusts.Size = new Size(94, 21);
             labelUserIllusts.TabIndex = 3;
-            labelUserIllusts.Text = "label1";
+            labelUserIllusts.Text = "Illustrations:";
             // 
             // pictureBoxUser
             // 
@@ -278,7 +198,7 @@
             pictureBoxUser.Location = new Point(15, 15);
             pictureBoxUser.Margin = new Padding(0);
             pictureBoxUser.Name = "pictureBoxUser";
-            pictureBoxUser.Size = new Size(130, 130);
+            pictureBoxUser.Size = new Size(100, 100);
             pictureBoxUser.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxUser.TabIndex = 0;
             pictureBoxUser.TabStop = false;
@@ -286,20 +206,154 @@
             // labelUserId
             // 
             labelUserId.AutoSize = true;
-            labelUserId.Location = new Point(162, 44);
+            labelUserId.Font = new Font("Segoe UI", 12F);
+            labelUserId.Location = new Point(120, 54);
             labelUserId.Name = "labelUserId";
-            labelUserId.Size = new Size(38, 15);
+            labelUserId.Size = new Size(64, 21);
             labelUserId.TabIndex = 2;
-            labelUserId.Text = "label1";
+            labelUserId.Text = "User ID:";
             // 
             // labelName
             // 
             labelName.AutoSize = true;
-            labelName.Location = new Point(162, 15);
+            labelName.Font = new Font("Segoe UI", 12F);
+            labelName.Location = new Point(120, 15);
             labelName.Name = "labelName";
-            labelName.Size = new Size(38, 15);
+            labelName.Size = new Size(55, 21);
             labelName.TabIndex = 1;
-            labelName.Text = "label1";
+            labelName.Text = "Name:";
+            // 
+            // buttonStart
+            // 
+            buttonStart.Font = new Font("Segoe UI", 14.25F);
+            buttonStart.Location = new Point(15, 99);
+            buttonStart.Margin = new Padding(0);
+            buttonStart.Name = "buttonStart";
+            buttonStart.Size = new Size(121, 52);
+            buttonStart.TabIndex = 4;
+            buttonStart.Text = "Start";
+            buttonStart.UseVisualStyleBackColor = true;
+            // 
+            // buttonStop
+            // 
+            buttonStop.Font = new Font("Segoe UI", 14.25F);
+            buttonStop.Location = new Point(149, 99);
+            buttonStop.Margin = new Padding(0);
+            buttonStop.Name = "buttonStop";
+            buttonStop.Size = new Size(121, 52);
+            buttonStop.TabIndex = 5;
+            buttonStop.Text = "Stop";
+            buttonStop.UseVisualStyleBackColor = true;
+            // 
+            // buttonId
+            // 
+            buttonId.Font = new Font("Segoe UI", 14.25F);
+            buttonId.Location = new Point(263, 57);
+            buttonId.Margin = new Padding(0);
+            buttonId.Name = "buttonId";
+            buttonId.Size = new Size(142, 33);
+            buttonId.TabIndex = 3;
+            buttonId.Text = "Add ID";
+            buttonId.UseVisualStyleBackColor = true;
+            // 
+            // buttonCancel
+            // 
+            buttonCancel.Font = new Font("Segoe UI", 14.25F);
+            buttonCancel.Location = new Point(284, 99);
+            buttonCancel.Margin = new Padding(0);
+            buttonCancel.Name = "buttonCancel";
+            buttonCancel.Size = new Size(121, 52);
+            buttonCancel.TabIndex = 6;
+            buttonCancel.Text = "Cancel";
+            buttonCancel.UseVisualStyleBackColor = true;
+            // 
+            // textBoxId
+            // 
+            textBoxId.Font = new Font("Segoe UI", 14.25F);
+            textBoxId.Location = new Point(15, 57);
+            textBoxId.Margin = new Padding(0);
+            textBoxId.Name = "textBoxId";
+            textBoxId.Size = new Size(235, 33);
+            textBoxId.TabIndex = 2;
+            // 
+            // labelDownloading
+            // 
+            labelDownloading.AutoSize = true;
+            labelDownloading.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            labelDownloading.Location = new Point(15, 161);
+            labelDownloading.Name = "labelDownloading";
+            labelDownloading.Size = new Size(63, 25);
+            labelDownloading.TabIndex = 7;
+            labelDownloading.Text = "label1";
+            // 
+            // textBoxFolder
+            // 
+            textBoxFolder.Font = new Font("Segoe UI", 14.25F);
+            textBoxFolder.Location = new Point(170, 15);
+            textBoxFolder.Margin = new Padding(0);
+            textBoxFolder.Name = "textBoxFolder";
+            textBoxFolder.Size = new Size(235, 33);
+            textBoxFolder.TabIndex = 1;
+            // 
+            // progressBarDownloading
+            // 
+            progressBarDownloading.Location = new Point(15, 186);
+            progressBarDownloading.Margin = new Padding(0);
+            progressBarDownloading.Name = "progressBarDownloading";
+            progressBarDownloading.Size = new Size(390, 52);
+            progressBarDownloading.TabIndex = 8;
+            // 
+            // buttonFolder
+            // 
+            buttonFolder.Font = new Font("Segoe UI", 14.25F);
+            buttonFolder.Location = new Point(15, 15);
+            buttonFolder.Margin = new Padding(0);
+            buttonFolder.Name = "buttonFolder";
+            buttonFolder.Size = new Size(142, 33);
+            buttonFolder.TabIndex = 0;
+            buttonFolder.Text = "Choose Folder";
+            buttonFolder.UseVisualStyleBackColor = true;
+            // 
+            // textBoxDownloaded
+            // 
+            textBoxDownloaded.Location = new Point(15, 246);
+            textBoxDownloaded.Margin = new Padding(0);
+            textBoxDownloaded.MaxLength = 100000;
+            textBoxDownloaded.Multiline = true;
+            textBoxDownloaded.Name = "textBoxDownloaded";
+            textBoxDownloaded.ScrollBars = ScrollBars.Horizontal;
+            textBoxDownloaded.Size = new Size(390, 125);
+            textBoxDownloaded.TabIndex = 9;
+            // 
+            // labelNameValue
+            // 
+            labelNameValue.AutoSize = true;
+            labelNameValue.Font = new Font("Segoe UI", 12F);
+            labelNameValue.Location = new Point(181, 15);
+            labelNameValue.Name = "labelNameValue";
+            labelNameValue.Size = new Size(52, 21);
+            labelNameValue.TabIndex = 4;
+            labelNameValue.Text = "label1";
+            // 
+            // labelUserIdValue
+            // 
+            labelUserIdValue.AutoSize = true;
+            labelUserIdValue.Font = new Font("Segoe UI", 12F);
+            labelUserIdValue.Location = new Point(190, 54);
+            labelUserIdValue.Name = "labelUserIdValue";
+            labelUserIdValue.Size = new Size(52, 21);
+            labelUserIdValue.TabIndex = 5;
+            labelUserIdValue.Text = "label2";
+            // 
+            // labelUserIllustsValue
+            // 
+            labelUserIllustsValue.AutoSize = true;
+            labelUserIllustsValue.Font = new Font("Segoe UI", 12F);
+            labelUserIllustsValue.Location = new Point(216, 93);
+            labelUserIllustsValue.Name = "labelUserIllustsValue";
+            labelUserIllustsValue.Size = new Size(52, 21);
+            labelUserIllustsValue.TabIndex = 6;
+            labelUserIllustsValue.Text = "label3";
             // 
             // Downloader
             // 
@@ -330,16 +384,6 @@
         private Panel panelDownload;
         private Panel panelQueue;
         private Panel panelUserInfo;
-        private Button buttonStart;
-        private Button buttonId;
-        private TextBox textBoxId;
-        private TextBox textBoxFolder;
-        private Button buttonFolder;
-        private TextBox textBoxDownloaded;
-        private ProgressBar progressBarDownloading;
-        private Label labelDownloading;
-        private Button buttonCancel;
-        private Button buttonStop;
         private Button buttonRemoveAll;
         private Button buttonRemove;
         private Label labelUserIllusts;
@@ -350,5 +394,18 @@
         private Panel panelInnerDownloaded;
         private Panel panelInnerUserInfo;
         private Panel panelInnerQueue;
+        private TextBox textBoxDownloaded;
+        private Button buttonFolder;
+        private ProgressBar progressBarDownloading;
+        private TextBox textBoxFolder;
+        private Label labelDownloading;
+        private TextBox textBoxId;
+        private Button buttonCancel;
+        private Button buttonId;
+        private Button buttonStop;
+        private Button buttonStart;
+        private Label labelUserIllustsValue;
+        private Label labelUserIdValue;
+        private Label labelNameValue;
     }
 }
