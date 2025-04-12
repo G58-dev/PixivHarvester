@@ -30,6 +30,16 @@
         {
             panelDownload = new Panel();
             panelInnerDownloaded = new Panel();
+            textBoxDownloaded = new TextBox();
+            buttonFolder = new Button();
+            progressBarDownloading = new ProgressBar();
+            textBoxFolder = new TextBox();
+            labelDownloading = new Label();
+            textBoxId = new TextBox();
+            buttonCancel = new Button();
+            buttonId = new Button();
+            buttonStop = new Button();
+            buttonStart = new Button();
             panelQueue = new Panel();
             panelInnerQueue = new Panel();
             buttonRemoveAll = new Button();
@@ -37,23 +47,13 @@
             buttonRemove = new Button();
             panelUserInfo = new Panel();
             panelInnerUserInfo = new Panel();
+            labelUserIllustsValue = new Label();
+            labelUserIdValue = new Label();
+            labelNameValue = new Label();
             labelUserIllusts = new Label();
             pictureBoxUser = new PictureBox();
             labelUserId = new Label();
             labelName = new Label();
-            buttonStart = new Button();
-            buttonStop = new Button();
-            buttonId = new Button();
-            buttonCancel = new Button();
-            textBoxId = new TextBox();
-            labelDownloading = new Label();
-            textBoxFolder = new TextBox();
-            progressBarDownloading = new ProgressBar();
-            buttonFolder = new Button();
-            textBoxDownloaded = new TextBox();
-            labelNameValue = new Label();
-            labelUserIdValue = new Label();
-            labelUserIllustsValue = new Label();
             panelDownload.SuspendLayout();
             panelInnerDownloaded.SuspendLayout();
             panelQueue.SuspendLayout();
@@ -94,6 +94,110 @@
             panelInnerDownloaded.Padding = new Padding(15);
             panelInnerDownloaded.Size = new Size(420, 386);
             panelInnerDownloaded.TabIndex = 10;
+            // 
+            // textBoxDownloaded
+            // 
+            textBoxDownloaded.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBoxDownloaded.Location = new Point(15, 246);
+            textBoxDownloaded.Margin = new Padding(0);
+            textBoxDownloaded.MaxLength = 100000;
+            textBoxDownloaded.Multiline = true;
+            textBoxDownloaded.Name = "textBoxDownloaded";
+            textBoxDownloaded.ScrollBars = ScrollBars.Vertical;
+            textBoxDownloaded.Size = new Size(390, 125);
+            textBoxDownloaded.TabIndex = 9;
+            textBoxDownloaded.WordWrap = false;
+            // 
+            // buttonFolder
+            // 
+            buttonFolder.Font = new Font("Segoe UI", 14.25F);
+            buttonFolder.Location = new Point(15, 15);
+            buttonFolder.Margin = new Padding(0);
+            buttonFolder.Name = "buttonFolder";
+            buttonFolder.Size = new Size(142, 33);
+            buttonFolder.TabIndex = 0;
+            buttonFolder.Text = "Choose Folder";
+            buttonFolder.UseVisualStyleBackColor = true;
+            // 
+            // progressBarDownloading
+            // 
+            progressBarDownloading.Location = new Point(15, 186);
+            progressBarDownloading.Margin = new Padding(0);
+            progressBarDownloading.Name = "progressBarDownloading";
+            progressBarDownloading.Size = new Size(390, 52);
+            progressBarDownloading.TabIndex = 8;
+            // 
+            // textBoxFolder
+            // 
+            textBoxFolder.Font = new Font("Segoe UI", 14.25F);
+            textBoxFolder.Location = new Point(170, 15);
+            textBoxFolder.Margin = new Padding(0);
+            textBoxFolder.Name = "textBoxFolder";
+            textBoxFolder.Size = new Size(235, 33);
+            textBoxFolder.TabIndex = 1;
+            // 
+            // labelDownloading
+            // 
+            labelDownloading.AutoSize = true;
+            labelDownloading.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            labelDownloading.Location = new Point(15, 161);
+            labelDownloading.Name = "labelDownloading";
+            labelDownloading.Size = new Size(63, 25);
+            labelDownloading.TabIndex = 7;
+            labelDownloading.Text = "label1";
+            // 
+            // textBoxId
+            // 
+            textBoxId.Font = new Font("Segoe UI", 14.25F);
+            textBoxId.Location = new Point(15, 57);
+            textBoxId.Margin = new Padding(0);
+            textBoxId.Name = "textBoxId";
+            textBoxId.Size = new Size(235, 33);
+            textBoxId.TabIndex = 2;
+            // 
+            // buttonCancel
+            // 
+            buttonCancel.Font = new Font("Segoe UI", 14.25F);
+            buttonCancel.Location = new Point(284, 99);
+            buttonCancel.Margin = new Padding(0);
+            buttonCancel.Name = "buttonCancel";
+            buttonCancel.Size = new Size(121, 52);
+            buttonCancel.TabIndex = 6;
+            buttonCancel.Text = "Cancel";
+            buttonCancel.UseVisualStyleBackColor = true;
+            // 
+            // buttonId
+            // 
+            buttonId.Font = new Font("Segoe UI", 14.25F);
+            buttonId.Location = new Point(263, 57);
+            buttonId.Margin = new Padding(0);
+            buttonId.Name = "buttonId";
+            buttonId.Size = new Size(142, 33);
+            buttonId.TabIndex = 3;
+            buttonId.Text = "Add ID";
+            buttonId.UseVisualStyleBackColor = true;
+            // 
+            // buttonStop
+            // 
+            buttonStop.Font = new Font("Segoe UI", 14.25F);
+            buttonStop.Location = new Point(149, 99);
+            buttonStop.Margin = new Padding(0);
+            buttonStop.Name = "buttonStop";
+            buttonStop.Size = new Size(121, 52);
+            buttonStop.TabIndex = 5;
+            buttonStop.Text = "Stop";
+            buttonStop.UseVisualStyleBackColor = true;
+            // 
+            // buttonStart
+            // 
+            buttonStart.Font = new Font("Segoe UI", 14.25F);
+            buttonStart.Location = new Point(15, 99);
+            buttonStart.Margin = new Padding(0);
+            buttonStart.Name = "buttonStart";
+            buttonStart.Size = new Size(121, 52);
+            buttonStart.TabIndex = 4;
+            buttonStart.Text = "Start";
+            buttonStart.UseVisualStyleBackColor = true;
             // 
             // panelQueue
             // 
@@ -182,6 +286,36 @@
             panelInnerUserInfo.Size = new Size(320, 130);
             panelInnerUserInfo.TabIndex = 12;
             // 
+            // labelUserIllustsValue
+            // 
+            labelUserIllustsValue.AutoSize = true;
+            labelUserIllustsValue.Font = new Font("Segoe UI", 12F);
+            labelUserIllustsValue.Location = new Point(216, 93);
+            labelUserIllustsValue.Name = "labelUserIllustsValue";
+            labelUserIllustsValue.Size = new Size(52, 21);
+            labelUserIllustsValue.TabIndex = 6;
+            labelUserIllustsValue.Text = "label3";
+            // 
+            // labelUserIdValue
+            // 
+            labelUserIdValue.AutoSize = true;
+            labelUserIdValue.Font = new Font("Segoe UI", 12F);
+            labelUserIdValue.Location = new Point(190, 54);
+            labelUserIdValue.Name = "labelUserIdValue";
+            labelUserIdValue.Size = new Size(52, 21);
+            labelUserIdValue.TabIndex = 5;
+            labelUserIdValue.Text = "label2";
+            // 
+            // labelNameValue
+            // 
+            labelNameValue.AutoSize = true;
+            labelNameValue.Font = new Font("Segoe UI", 12F);
+            labelNameValue.Location = new Point(181, 15);
+            labelNameValue.Name = "labelNameValue";
+            labelNameValue.Size = new Size(52, 21);
+            labelNameValue.TabIndex = 4;
+            labelNameValue.Text = "label1";
+            // 
             // labelUserIllusts
             // 
             labelUserIllusts.AutoSize = true;
@@ -222,138 +356,6 @@
             labelName.Size = new Size(55, 21);
             labelName.TabIndex = 1;
             labelName.Text = "Name:";
-            // 
-            // buttonStart
-            // 
-            buttonStart.Font = new Font("Segoe UI", 14.25F);
-            buttonStart.Location = new Point(15, 99);
-            buttonStart.Margin = new Padding(0);
-            buttonStart.Name = "buttonStart";
-            buttonStart.Size = new Size(121, 52);
-            buttonStart.TabIndex = 4;
-            buttonStart.Text = "Start";
-            buttonStart.UseVisualStyleBackColor = true;
-            // 
-            // buttonStop
-            // 
-            buttonStop.Font = new Font("Segoe UI", 14.25F);
-            buttonStop.Location = new Point(149, 99);
-            buttonStop.Margin = new Padding(0);
-            buttonStop.Name = "buttonStop";
-            buttonStop.Size = new Size(121, 52);
-            buttonStop.TabIndex = 5;
-            buttonStop.Text = "Stop";
-            buttonStop.UseVisualStyleBackColor = true;
-            // 
-            // buttonId
-            // 
-            buttonId.Font = new Font("Segoe UI", 14.25F);
-            buttonId.Location = new Point(263, 57);
-            buttonId.Margin = new Padding(0);
-            buttonId.Name = "buttonId";
-            buttonId.Size = new Size(142, 33);
-            buttonId.TabIndex = 3;
-            buttonId.Text = "Add ID";
-            buttonId.UseVisualStyleBackColor = true;
-            // 
-            // buttonCancel
-            // 
-            buttonCancel.Font = new Font("Segoe UI", 14.25F);
-            buttonCancel.Location = new Point(284, 99);
-            buttonCancel.Margin = new Padding(0);
-            buttonCancel.Name = "buttonCancel";
-            buttonCancel.Size = new Size(121, 52);
-            buttonCancel.TabIndex = 6;
-            buttonCancel.Text = "Cancel";
-            buttonCancel.UseVisualStyleBackColor = true;
-            // 
-            // textBoxId
-            // 
-            textBoxId.Font = new Font("Segoe UI", 14.25F);
-            textBoxId.Location = new Point(15, 57);
-            textBoxId.Margin = new Padding(0);
-            textBoxId.Name = "textBoxId";
-            textBoxId.Size = new Size(235, 33);
-            textBoxId.TabIndex = 2;
-            // 
-            // labelDownloading
-            // 
-            labelDownloading.AutoSize = true;
-            labelDownloading.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelDownloading.Location = new Point(15, 161);
-            labelDownloading.Name = "labelDownloading";
-            labelDownloading.Size = new Size(63, 25);
-            labelDownloading.TabIndex = 7;
-            labelDownloading.Text = "label1";
-            // 
-            // textBoxFolder
-            // 
-            textBoxFolder.Font = new Font("Segoe UI", 14.25F);
-            textBoxFolder.Location = new Point(170, 15);
-            textBoxFolder.Margin = new Padding(0);
-            textBoxFolder.Name = "textBoxFolder";
-            textBoxFolder.Size = new Size(235, 33);
-            textBoxFolder.TabIndex = 1;
-            // 
-            // progressBarDownloading
-            // 
-            progressBarDownloading.Location = new Point(15, 186);
-            progressBarDownloading.Margin = new Padding(0);
-            progressBarDownloading.Name = "progressBarDownloading";
-            progressBarDownloading.Size = new Size(390, 52);
-            progressBarDownloading.TabIndex = 8;
-            // 
-            // buttonFolder
-            // 
-            buttonFolder.Font = new Font("Segoe UI", 14.25F);
-            buttonFolder.Location = new Point(15, 15);
-            buttonFolder.Margin = new Padding(0);
-            buttonFolder.Name = "buttonFolder";
-            buttonFolder.Size = new Size(142, 33);
-            buttonFolder.TabIndex = 0;
-            buttonFolder.Text = "Choose Folder";
-            buttonFolder.UseVisualStyleBackColor = true;
-            // 
-            // textBoxDownloaded
-            // 
-            textBoxDownloaded.Location = new Point(15, 246);
-            textBoxDownloaded.Margin = new Padding(0);
-            textBoxDownloaded.MaxLength = 100000;
-            textBoxDownloaded.Multiline = true;
-            textBoxDownloaded.Name = "textBoxDownloaded";
-            textBoxDownloaded.ScrollBars = ScrollBars.Horizontal;
-            textBoxDownloaded.Size = new Size(390, 125);
-            textBoxDownloaded.TabIndex = 9;
-            // 
-            // labelNameValue
-            // 
-            labelNameValue.AutoSize = true;
-            labelNameValue.Font = new Font("Segoe UI", 12F);
-            labelNameValue.Location = new Point(181, 15);
-            labelNameValue.Name = "labelNameValue";
-            labelNameValue.Size = new Size(52, 21);
-            labelNameValue.TabIndex = 4;
-            labelNameValue.Text = "label1";
-            // 
-            // labelUserIdValue
-            // 
-            labelUserIdValue.AutoSize = true;
-            labelUserIdValue.Font = new Font("Segoe UI", 12F);
-            labelUserIdValue.Location = new Point(190, 54);
-            labelUserIdValue.Name = "labelUserIdValue";
-            labelUserIdValue.Size = new Size(52, 21);
-            labelUserIdValue.TabIndex = 5;
-            labelUserIdValue.Text = "label2";
-            // 
-            // labelUserIllustsValue
-            // 
-            labelUserIllustsValue.AutoSize = true;
-            labelUserIllustsValue.Font = new Font("Segoe UI", 12F);
-            labelUserIllustsValue.Location = new Point(216, 93);
-            labelUserIllustsValue.Name = "labelUserIllustsValue";
-            labelUserIllustsValue.Size = new Size(52, 21);
-            labelUserIllustsValue.TabIndex = 6;
-            labelUserIllustsValue.Text = "label3";
             // 
             // Downloader
             // 
