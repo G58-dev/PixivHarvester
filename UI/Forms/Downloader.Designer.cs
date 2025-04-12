@@ -28,12 +28,327 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Downloader";
+            panelDownload = new Panel();
+            panelInnerDownloaded = new Panel();
+            textBoxDownloaded = new TextBox();
+            buttonFolder = new Button();
+            progressBarDownloading = new ProgressBar();
+            textBoxFolder = new TextBox();
+            labelDownloading = new Label();
+            textBoxId = new TextBox();
+            buttonCancel = new Button();
+            buttonId = new Button();
+            buttonStop = new Button();
+            buttonStart = new Button();
+            panelQueue = new Panel();
+            panelInnerQueue = new Panel();
+            buttonRemoveAll = new Button();
+            listBoxQueue = new ListBox();
+            buttonRemove = new Button();
+            panelUserInfo = new Panel();
+            panelInnerUserInfo = new Panel();
+            labelUserIllusts = new Label();
+            pictureBoxUser = new PictureBox();
+            labelUserId = new Label();
+            labelName = new Label();
+            panelDownload.SuspendLayout();
+            panelInnerDownloaded.SuspendLayout();
+            panelQueue.SuspendLayout();
+            panelInnerQueue.SuspendLayout();
+            panelUserInfo.SuspendLayout();
+            panelInnerUserInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxUser).BeginInit();
+            SuspendLayout();
+            // 
+            // panelDownload
+            // 
+            panelDownload.BackColor = SystemColors.Control;
+            panelDownload.Controls.Add(panelInnerDownloaded);
+            panelDownload.Dock = DockStyle.Left;
+            panelDownload.Location = new Point(0, 0);
+            panelDownload.Margin = new Padding(0);
+            panelDownload.Name = "panelDownload";
+            panelDownload.Padding = new Padding(20, 20, 10, 20);
+            panelDownload.Size = new Size(450, 426);
+            panelDownload.TabIndex = 0;
+            // 
+            // panelInnerDownloaded
+            // 
+            panelInnerDownloaded.BackColor = SystemColors.ControlLightLight;
+            panelInnerDownloaded.Controls.Add(textBoxDownloaded);
+            panelInnerDownloaded.Controls.Add(buttonFolder);
+            panelInnerDownloaded.Controls.Add(progressBarDownloading);
+            panelInnerDownloaded.Controls.Add(textBoxFolder);
+            panelInnerDownloaded.Controls.Add(labelDownloading);
+            panelInnerDownloaded.Controls.Add(textBoxId);
+            panelInnerDownloaded.Controls.Add(buttonCancel);
+            panelInnerDownloaded.Controls.Add(buttonId);
+            panelInnerDownloaded.Controls.Add(buttonStop);
+            panelInnerDownloaded.Controls.Add(buttonStart);
+            panelInnerDownloaded.Location = new Point(20, 20);
+            panelInnerDownloaded.Margin = new Padding(0);
+            panelInnerDownloaded.Name = "panelInnerDownloaded";
+            panelInnerDownloaded.Padding = new Padding(15);
+            panelInnerDownloaded.Size = new Size(420, 386);
+            panelInnerDownloaded.TabIndex = 10;
+            // 
+            // textBoxDownloaded
+            // 
+            textBoxDownloaded.Location = new Point(15, 172);
+            textBoxDownloaded.Margin = new Padding(0);
+            textBoxDownloaded.Name = "textBoxDownloaded";
+            textBoxDownloaded.Size = new Size(100, 23);
+            textBoxDownloaded.TabIndex = 9;
+            // 
+            // buttonFolder
+            // 
+            buttonFolder.Location = new Point(15, 15);
+            buttonFolder.Margin = new Padding(0);
+            buttonFolder.Name = "buttonFolder";
+            buttonFolder.Size = new Size(75, 23);
+            buttonFolder.TabIndex = 0;
+            buttonFolder.Text = "Choose Folder";
+            buttonFolder.UseVisualStyleBackColor = true;
+            // 
+            // progressBarDownloading
+            // 
+            progressBarDownloading.Location = new Point(15, 131);
+            progressBarDownloading.Margin = new Padding(0);
+            progressBarDownloading.Name = "progressBarDownloading";
+            progressBarDownloading.Size = new Size(100, 23);
+            progressBarDownloading.TabIndex = 8;
+            // 
+            // textBoxFolder
+            // 
+            textBoxFolder.Location = new Point(99, 15);
+            textBoxFolder.Margin = new Padding(0);
+            textBoxFolder.Name = "textBoxFolder";
+            textBoxFolder.Size = new Size(100, 23);
+            textBoxFolder.TabIndex = 1;
+            // 
+            // labelDownloading
+            // 
+            labelDownloading.AutoSize = true;
+            labelDownloading.Location = new Point(15, 116);
+            labelDownloading.Name = "labelDownloading";
+            labelDownloading.Size = new Size(38, 15);
+            labelDownloading.TabIndex = 7;
+            labelDownloading.Text = "label1";
+            // 
+            // textBoxId
+            // 
+            textBoxId.Location = new Point(15, 47);
+            textBoxId.Margin = new Padding(0);
+            textBoxId.Name = "textBoxId";
+            textBoxId.Size = new Size(100, 23);
+            textBoxId.TabIndex = 2;
+            // 
+            // buttonCancel
+            // 
+            buttonCancel.Location = new Point(183, 78);
+            buttonCancel.Margin = new Padding(0);
+            buttonCancel.Name = "buttonCancel";
+            buttonCancel.Size = new Size(75, 23);
+            buttonCancel.TabIndex = 6;
+            buttonCancel.Text = "Cancel";
+            buttonCancel.UseVisualStyleBackColor = true;
+            // 
+            // buttonId
+            // 
+            buttonId.Location = new Point(124, 47);
+            buttonId.Margin = new Padding(0);
+            buttonId.Name = "buttonId";
+            buttonId.Size = new Size(75, 23);
+            buttonId.TabIndex = 3;
+            buttonId.Text = "Add ID";
+            buttonId.UseVisualStyleBackColor = true;
+            // 
+            // buttonStop
+            // 
+            buttonStop.Location = new Point(99, 78);
+            buttonStop.Margin = new Padding(0);
+            buttonStop.Name = "buttonStop";
+            buttonStop.Size = new Size(75, 23);
+            buttonStop.TabIndex = 5;
+            buttonStop.Text = "Stop";
+            buttonStop.UseVisualStyleBackColor = true;
+            // 
+            // buttonStart
+            // 
+            buttonStart.Location = new Point(15, 78);
+            buttonStart.Margin = new Padding(0);
+            buttonStart.Name = "buttonStart";
+            buttonStart.Size = new Size(75, 23);
+            buttonStart.TabIndex = 4;
+            buttonStart.Text = "Start";
+            buttonStart.UseVisualStyleBackColor = true;
+            // 
+            // panelQueue
+            // 
+            panelQueue.BackColor = SystemColors.Control;
+            panelQueue.Controls.Add(panelInnerQueue);
+            panelQueue.Dock = DockStyle.Top;
+            panelQueue.Location = new Point(450, 0);
+            panelQueue.Margin = new Padding(0);
+            panelQueue.Name = "panelQueue";
+            panelQueue.Padding = new Padding(10, 20, 20, 10);
+            panelQueue.Size = new Size(350, 225);
+            panelQueue.TabIndex = 1;
+            // 
+            // panelInnerQueue
+            // 
+            panelInnerQueue.BackColor = SystemColors.ControlLightLight;
+            panelInnerQueue.Controls.Add(buttonRemoveAll);
+            panelInnerQueue.Controls.Add(listBoxQueue);
+            panelInnerQueue.Controls.Add(buttonRemove);
+            panelInnerQueue.Location = new Point(10, 20);
+            panelInnerQueue.Margin = new Padding(0);
+            panelInnerQueue.Name = "panelInnerQueue";
+            panelInnerQueue.Padding = new Padding(15);
+            panelInnerQueue.Size = new Size(320, 195);
+            panelInnerQueue.TabIndex = 11;
+            // 
+            // buttonRemoveAll
+            // 
+            buttonRemoveAll.Location = new Point(230, 47);
+            buttonRemoveAll.Margin = new Padding(0);
+            buttonRemoveAll.Name = "buttonRemoveAll";
+            buttonRemoveAll.Size = new Size(75, 23);
+            buttonRemoveAll.TabIndex = 2;
+            buttonRemoveAll.Text = "button1";
+            buttonRemoveAll.UseVisualStyleBackColor = true;
+            // 
+            // listBoxQueue
+            // 
+            listBoxQueue.FormattingEnabled = true;
+            listBoxQueue.Location = new Point(15, 15);
+            listBoxQueue.Margin = new Padding(0);
+            listBoxQueue.Name = "listBoxQueue";
+            listBoxQueue.Size = new Size(120, 94);
+            listBoxQueue.TabIndex = 3;
+            // 
+            // buttonRemove
+            // 
+            buttonRemove.Location = new Point(230, 15);
+            buttonRemove.Margin = new Padding(0);
+            buttonRemove.Name = "buttonRemove";
+            buttonRemove.Size = new Size(75, 23);
+            buttonRemove.TabIndex = 1;
+            buttonRemove.Text = "button1";
+            buttonRemove.UseVisualStyleBackColor = true;
+            // 
+            // panelUserInfo
+            // 
+            panelUserInfo.BackColor = SystemColors.Control;
+            panelUserInfo.Controls.Add(panelInnerUserInfo);
+            panelUserInfo.Dock = DockStyle.Fill;
+            panelUserInfo.Location = new Point(450, 225);
+            panelUserInfo.Margin = new Padding(0);
+            panelUserInfo.Name = "panelUserInfo";
+            panelUserInfo.Padding = new Padding(10, 10, 20, 20);
+            panelUserInfo.Size = new Size(350, 201);
+            panelUserInfo.TabIndex = 2;
+            // 
+            // panelInnerUserInfo
+            // 
+            panelInnerUserInfo.BackColor = SystemColors.ControlLightLight;
+            panelInnerUserInfo.Controls.Add(labelUserIllusts);
+            panelInnerUserInfo.Controls.Add(pictureBoxUser);
+            panelInnerUserInfo.Controls.Add(labelUserId);
+            panelInnerUserInfo.Controls.Add(labelName);
+            panelInnerUserInfo.Location = new Point(10, 10);
+            panelInnerUserInfo.Margin = new Padding(0);
+            panelInnerUserInfo.Name = "panelInnerUserInfo";
+            panelInnerUserInfo.Padding = new Padding(15);
+            panelInnerUserInfo.Size = new Size(320, 171);
+            panelInnerUserInfo.TabIndex = 12;
+            // 
+            // labelUserIllusts
+            // 
+            labelUserIllusts.AutoSize = true;
+            labelUserIllusts.Location = new Point(162, 73);
+            labelUserIllusts.Name = "labelUserIllusts";
+            labelUserIllusts.Size = new Size(38, 15);
+            labelUserIllusts.TabIndex = 3;
+            labelUserIllusts.Text = "label1";
+            // 
+            // pictureBoxUser
+            // 
+            pictureBoxUser.Image = Properties.Resources.no_user;
+            pictureBoxUser.Location = new Point(15, 15);
+            pictureBoxUser.Margin = new Padding(0);
+            pictureBoxUser.Name = "pictureBoxUser";
+            pictureBoxUser.Size = new Size(130, 130);
+            pictureBoxUser.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxUser.TabIndex = 0;
+            pictureBoxUser.TabStop = false;
+            // 
+            // labelUserId
+            // 
+            labelUserId.AutoSize = true;
+            labelUserId.Location = new Point(162, 44);
+            labelUserId.Name = "labelUserId";
+            labelUserId.Size = new Size(38, 15);
+            labelUserId.TabIndex = 2;
+            labelUserId.Text = "label1";
+            // 
+            // labelName
+            // 
+            labelName.AutoSize = true;
+            labelName.Location = new Point(162, 15);
+            labelName.Name = "labelName";
+            labelName.Size = new Size(38, 15);
+            labelName.TabIndex = 1;
+            labelName.Text = "label1";
+            // 
+            // Downloader
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 426);
+            Controls.Add(panelUserInfo);
+            Controls.Add(panelQueue);
+            Controls.Add(panelDownload);
+            FormBorderStyle = FormBorderStyle.None;
+            MaximizeBox = false;
+            Name = "Downloader";
+            Text = "Downloader";
+            panelDownload.ResumeLayout(false);
+            panelInnerDownloaded.ResumeLayout(false);
+            panelInnerDownloaded.PerformLayout();
+            panelQueue.ResumeLayout(false);
+            panelInnerQueue.ResumeLayout(false);
+            panelUserInfo.ResumeLayout(false);
+            panelInnerUserInfo.ResumeLayout(false);
+            panelInnerUserInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxUser).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private Panel panelDownload;
+        private Panel panelQueue;
+        private Panel panelUserInfo;
+        private Button buttonStart;
+        private Button buttonId;
+        private TextBox textBoxId;
+        private TextBox textBoxFolder;
+        private Button buttonFolder;
+        private TextBox textBoxDownloaded;
+        private ProgressBar progressBarDownloading;
+        private Label labelDownloading;
+        private Button buttonCancel;
+        private Button buttonStop;
+        private Button buttonRemoveAll;
+        private Button buttonRemove;
+        private Label labelUserIllusts;
+        private Label labelUserId;
+        private Label labelName;
+        private PictureBox pictureBoxUser;
+        private ListBox listBoxQueue;
+        private Panel panelInnerDownloaded;
+        private Panel panelInnerUserInfo;
+        private Panel panelInnerQueue;
     }
 }
