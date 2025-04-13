@@ -8,7 +8,7 @@ namespace UI
         public MainForm()
         {
             InitializeComponent();
-            LoadInnerForm(new Login()); // Loads Login page when App starts
+            LoadInnerForm(new Login(this)); // Loads Login page when App starts
         }
 
         public void LoadInnerForm(Form innerForm)
@@ -30,6 +30,11 @@ namespace UI
 
             // Shows the InnerForm
             currentInnerForm.Show();
+        }
+
+        private void updateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LoadInnerForm(new Login(this));
         }
     }
 }

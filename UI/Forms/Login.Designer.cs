@@ -50,6 +50,7 @@
             buttonLogIn.TabIndex = 0;
             buttonLogIn.Text = "Log in";
             buttonLogIn.UseVisualStyleBackColor = true;
+            buttonLogIn.Click += buttonLogIn_Click;
             // 
             // panel1
             // 

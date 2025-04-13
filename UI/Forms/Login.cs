@@ -12,9 +12,16 @@ namespace UI.Forms
 {
     public partial class Login : Form
     {
-        public Login()
+        MainForm mainForm;
+        public Login(MainForm form)
         {
             InitializeComponent();
+            mainForm = form;
+        }
+
+        private void buttonLogIn_Click(object sender, EventArgs e)
+        {
+            mainForm.LoadInnerForm(new Downloader());
         }
     }
 }

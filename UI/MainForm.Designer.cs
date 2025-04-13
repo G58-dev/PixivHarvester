@@ -65,6 +65,7 @@
             updateToolStripMenuItem.Name = "updateToolStripMenuItem";
             updateToolStripMenuItem.Size = new Size(180, 22);
             updateToolStripMenuItem.Text = "Update";
+            updateToolStripMenuItem.Click += updateToolStripMenuItem_Click;
             // 
             // themeToolStripMenuItem
             // 
@@ -76,19 +77,19 @@
             // lightToolStripMenuItem
             // 
             lightToolStripMenuItem.Name = "lightToolStripMenuItem";
-            lightToolStripMenuItem.Size = new Size(131, 22);
+            lightToolStripMenuItem.Size = new Size(180, 22);
             lightToolStripMenuItem.Text = "Light";
             // 
             // darkToolStripMenuItem
             // 
             darkToolStripMenuItem.Name = "darkToolStripMenuItem";
-            darkToolStripMenuItem.Size = new Size(131, 22);
+            darkToolStripMenuItem.Size = new Size(180, 22);
             darkToolStripMenuItem.Text = "Dark";
             // 
             // superDarkToolStripMenuItem
             // 
             superDarkToolStripMenuItem.Name = "superDarkToolStripMenuItem";
-            superDarkToolStripMenuItem.Size = new Size(131, 22);
+            superDarkToolStripMenuItem.Size = new Size(180, 22);
             superDarkToolStripMenuItem.Text = "Super Dark";
             // 
             // aboutToolStripMenuItem
@@ -101,13 +102,13 @@
             // creditsToolStripMenuItem
             // 
             creditsToolStripMenuItem.Name = "creditsToolStripMenuItem";
-            creditsToolStripMenuItem.Size = new Size(112, 22);
+            creditsToolStripMenuItem.Size = new Size(180, 22);
             creditsToolStripMenuItem.Text = "Credits";
             // 
             // versionToolStripMenuItem
             // 
             versionToolStripMenuItem.Name = "versionToolStripMenuItem";
-            versionToolStripMenuItem.Size = new Size(112, 22);
+            versionToolStripMenuItem.Size = new Size(180, 22);
             versionToolStripMenuItem.Text = "Version";
             // 
             // panelMain
