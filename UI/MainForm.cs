@@ -4,22 +4,32 @@ namespace UI
 {
     public partial class MainForm : Form
     {
-        public static Panel MainPanel;
+        private Form currentInnerForm = null!;
         public MainForm()
         {
             InitializeComponent();
-            MainPanel = panelMain;
+            LoadInnerForm(new Login()); // Loads Login page when App starts
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
+        public void LoadInnerForm(Form innerForm)
         {
-            Login login = new();
-            login.Dock = DockStyle.Fill;
-            login.TopLevel = false;
-            MainPanel.Controls.Clear();
-            MainPanel.Controls.Add(login);
-            login.Show();
+            // If an InnerForm exists, it will be closed 
+            if (currentInnerForm != null)
+            {
+                currentInnerForm.Close();
+            }
 
+            // Fills the Main Panel with the InnerForm
+            currentInnerForm = innerForm;
+            currentInnerForm.TopLevel = false;
+            currentInnerForm.Dock = DockStyle.Fill;
+
+            // Clears and Adds the InnerForm
+            panelMain.Controls.Clear();
+            panelMain.Controls.Add(currentInnerForm);
+
+            // Shows the InnerForm
+            currentInnerForm.Show();
         }
     }
 }
