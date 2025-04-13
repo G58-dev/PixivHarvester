@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             menuStrip = new MenuStrip();
             pHPSESSIDToolStripMenuItem = new ToolStripMenuItem();
-            updateToolStripMenuItem = new ToolStripMenuItem();
             themeToolStripMenuItem = new ToolStripMenuItem();
             lightToolStripMenuItem = new ToolStripMenuItem();
             darkToolStripMenuItem = new ToolStripMenuItem();
@@ -40,6 +39,7 @@
             creditsToolStripMenuItem = new ToolStripMenuItem();
             versionToolStripMenuItem = new ToolStripMenuItem();
             panelMain = new Panel();
+            updateToolStripMenuItem = new ToolStripMenuItem();
             menuStrip.SuspendLayout();
             SuspendLayout();
             // 
@@ -60,13 +60,6 @@
             pHPSESSIDToolStripMenuItem.Size = new Size(77, 20);
             pHPSESSIDToolStripMenuItem.Text = "PHPSESSID";
             // 
-            // updateToolStripMenuItem
-            // 
-            updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            updateToolStripMenuItem.Size = new Size(180, 22);
-            updateToolStripMenuItem.Text = "Update";
-            updateToolStripMenuItem.Click += updateToolStripMenuItem_Click;
-            // 
             // themeToolStripMenuItem
             // 
             themeToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { lightToolStripMenuItem, darkToolStripMenuItem, superDarkToolStripMenuItem });
@@ -77,19 +70,19 @@
             // lightToolStripMenuItem
             // 
             lightToolStripMenuItem.Name = "lightToolStripMenuItem";
-            lightToolStripMenuItem.Size = new Size(180, 22);
+            lightToolStripMenuItem.Size = new Size(131, 22);
             lightToolStripMenuItem.Text = "Light";
             // 
             // darkToolStripMenuItem
             // 
             darkToolStripMenuItem.Name = "darkToolStripMenuItem";
-            darkToolStripMenuItem.Size = new Size(180, 22);
+            darkToolStripMenuItem.Size = new Size(131, 22);
             darkToolStripMenuItem.Text = "Dark";
             // 
             // superDarkToolStripMenuItem
             // 
             superDarkToolStripMenuItem.Name = "superDarkToolStripMenuItem";
-            superDarkToolStripMenuItem.Size = new Size(180, 22);
+            superDarkToolStripMenuItem.Size = new Size(131, 22);
             superDarkToolStripMenuItem.Text = "Super Dark";
             // 
             // aboutToolStripMenuItem
@@ -119,6 +112,13 @@
             panelMain.Size = new Size(800, 426);
             panelMain.TabIndex = 1;
             // 
+            // updateToolStripMenuItem
+            // 
+            updateToolStripMenuItem.Name = "updateToolStripMenuItem";
+            updateToolStripMenuItem.Size = new Size(180, 22);
+            updateToolStripMenuItem.Text = "Update";
+            updateToolStripMenuItem.Click += updateToolStripMenuItem_Click;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -143,7 +143,6 @@
 
         private MenuStrip menuStrip;
         private ToolStripMenuItem pHPSESSIDToolStripMenuItem;
-        private ToolStripMenuItem updateToolStripMenuItem;
         private ToolStripMenuItem themeToolStripMenuItem;
         private ToolStripMenuItem lightToolStripMenuItem;
         private ToolStripMenuItem darkToolStripMenuItem;
@@ -152,5 +151,6 @@
         private ToolStripMenuItem creditsToolStripMenuItem;
         private ToolStripMenuItem versionToolStripMenuItem;
         private Panel panelMain;
+        public ToolStripMenuItem updateToolStripMenuItem;
     }
 }

@@ -9,6 +9,7 @@ namespace UI
         {
             InitializeComponent();
             LoadInnerForm(new Login(this)); // Loads Login page when App starts
+            updateToolStripMenuItem.Enabled = false;
         }
 
         public void LoadInnerForm(Form innerForm)
@@ -35,6 +36,7 @@ namespace UI
         private void updateToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LoadInnerForm(new Login(this));
+            updateToolStripMenuItem.Enabled = false;
         }
     }
 }

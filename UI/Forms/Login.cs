@@ -22,6 +22,7 @@ namespace UI.Forms
         private void buttonLogIn_Click(object sender, EventArgs e)
         {
             mainForm.LoadInnerForm(new Downloader());
+            mainForm.updateToolStripMenuItem.Enabled = true;
         }
     }
 }
