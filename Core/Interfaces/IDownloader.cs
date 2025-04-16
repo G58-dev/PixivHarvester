@@ -1,0 +1,33 @@
+﻿namespace Core.Interfaces
+{
+    internal interface IDownloader
+    {
+        // Properties
+
+        string PixivSession { get; set; }
+        string SavePath { get; set; }
+
+        // Methods
+
+        // Fetches user profile info from pixiv.net
+        Task FetchUserAsync(int userId);
+
+        // Fetches user's illustrations from pixiv.net/ajax
+        Task<List<int>> FetchIllustsAsync(int userId);
+
+        // Fetches the URL of the specified illustration
+        Task<string> FetchIllustUrlAsync(int illustId);
+
+        // Downloads illustration from pixiv.net
+        Task DownloadIllustAsync(string originalUrl, int illustId);
+
+        // Saves user data to a JSON file in the local 'User' folder
+        void SaveUserToSavePath(IUser user);
+
+        // Gets the path to the folder where illustrations will be saved
+        void SetSavePath();
+
+        // Reads user data from the local JSON file to prevent redundant illustration downloads
+        void FetchLastIllustFromJsonFile();
+    }
+}
