@@ -10,7 +10,7 @@
         // Methods
 
         // Fetches user profile info from pixiv.net
-        Task FetchUserAsync(int userId);
+        Task<bool> FetchUserAsync(int userId);
 
         // Fetches user's illustrations from pixiv.net/ajax
         Task<List<int>> FetchIllustsAsync(int userId);
@@ -22,12 +22,12 @@
         Task DownloadIllustAsync(string originalUrl, int illustId);
 
         // Saves user data to a JSON file in the local 'User' folder
-        void SaveUserToSavePath(IUser user);
+        void SaveUserToSavePath();
 
         // Gets the path to the folder where illustrations will be saved
         void SetSavePath();
 
         // Reads user data from the local JSON file to prevent redundant illustration downloads
-        void FetchLastIllustFromJsonFile();
+        int FetchLastIllustFromJsonFile();
     }
 }
