@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+﻿using Core;
+
 namespace UI.Forms
 {
     public partial class Login : Form
@@ -14,10 +11,22 @@ namespace UI.Forms
             mainForm = form;
         }
 
-        private void buttonLogIn_Click(object sender, EventArgs e)
+        private async void buttonLogIn_Click(object sender, EventArgs e)
         {
-            mainForm.LoadInnerForm(new Downloader());
-            mainForm.updateToolStripMenuItem.Enabled = true;
+            if (textBoxEnterSession.Text == string.Empty)
+            {
+                MessageBox.Show("PHPSESSID cannot be empty", "No PHPSESSID", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (await mainForm.coreDownloader.IsRealSessionAsync(textBoxEnterSession.Text))
+            {
+                mainForm.coreDownloader.InitDownloader(textBoxEnterSession.Text);
+                mainForm.LoadInnerForm(new Downloader());
+                mainForm.updateToolStripMenuItem.Enabled = true;
+            }
+            else
+            {
+                MessageBox.Show("PHPSESSID is not a valid session.", "Invalid PHPSESSID", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

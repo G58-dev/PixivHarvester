@@ -5,6 +5,7 @@ namespace UI
     public partial class MainForm : Form
     {
         private Form currentInnerForm = null!;
+        public Core.Classes.Downloader coreDownloader = new();
         public MainForm()
         {
             InitializeComponent();
