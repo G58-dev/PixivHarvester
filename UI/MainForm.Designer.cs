@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             menuStrip = new MenuStrip();
             pHPSESSIDToolStripMenuItem = new ToolStripMenuItem();
+            updateToolStripMenuItem = new ToolStripMenuItem();
             themeToolStripMenuItem = new ToolStripMenuItem();
             lightToolStripMenuItem = new ToolStripMenuItem();
             darkToolStripMenuItem = new ToolStripMenuItem();
@@ -39,7 +40,6 @@
             creditsToolStripMenuItem = new ToolStripMenuItem();
             versionToolStripMenuItem = new ToolStripMenuItem();
             panelMain = new Panel();
-            updateToolStripMenuItem = new ToolStripMenuItem();
             menuStrip.SuspendLayout();
             SuspendLayout();
             // 
@@ -59,6 +59,13 @@
             pHPSESSIDToolStripMenuItem.Name = "pHPSESSIDToolStripMenuItem";
             pHPSESSIDToolStripMenuItem.Size = new Size(77, 20);
             pHPSESSIDToolStripMenuItem.Text = "PHPSESSID";
+            // 
+            // updateToolStripMenuItem
+            // 
+            updateToolStripMenuItem.Name = "updateToolStripMenuItem";
+            updateToolStripMenuItem.Size = new Size(112, 22);
+            updateToolStripMenuItem.Text = "Update";
+            updateToolStripMenuItem.Click += updateToolStripMenuItem_Click;
             // 
             // themeToolStripMenuItem
             // 
@@ -95,13 +102,13 @@
             // creditsToolStripMenuItem
             // 
             creditsToolStripMenuItem.Name = "creditsToolStripMenuItem";
-            creditsToolStripMenuItem.Size = new Size(180, 22);
+            creditsToolStripMenuItem.Size = new Size(112, 22);
             creditsToolStripMenuItem.Text = "Credits";
             // 
             // versionToolStripMenuItem
             // 
             versionToolStripMenuItem.Name = "versionToolStripMenuItem";
-            versionToolStripMenuItem.Size = new Size(180, 22);
+            versionToolStripMenuItem.Size = new Size(112, 22);
             versionToolStripMenuItem.Text = "Version";
             // 
             // panelMain
@@ -111,13 +118,6 @@
             panelMain.Name = "panelMain";
             panelMain.Size = new Size(800, 426);
             panelMain.TabIndex = 1;
-            // 
-            // updateToolStripMenuItem
-            // 
-            updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            updateToolStripMenuItem.Size = new Size(180, 22);
-            updateToolStripMenuItem.Text = "Update";
-            updateToolStripMenuItem.Click += updateToolStripMenuItem_Click;
             // 
             // MainForm
             // 
@@ -132,7 +132,7 @@
             MaximizeBox = false;
             Name = "MainForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Pixiv Harvester | v0.1.0-indev";
+            Text = "Pixiv Harvester | v0.2.0-indev";
             menuStrip.ResumeLayout(false);
             menuStrip.PerformLayout();
             ResumeLayout(false);
