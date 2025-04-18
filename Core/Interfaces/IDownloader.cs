@@ -9,6 +9,9 @@
 
         // Methods
 
+        // Validates whether the session is legitimate
+        Task<bool> IsRealSessionAsync(string phpsessid);
+
         // Fetches user profile info from pixiv.net
         Task<bool> FetchUserAsync(int userId);
 
