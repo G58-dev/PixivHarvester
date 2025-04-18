@@ -2,7 +2,7 @@
 
 namespace Core.Classes
 {
-    internal class User : IUser
+    public class User : IUser
     {
         // Properties
 
