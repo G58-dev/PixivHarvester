@@ -1,6 +1,6 @@
 ﻿namespace Core.Interfaces
 {
-    internal interface IDownloader
+    public interface IDownloader
     {
         // Properties
 

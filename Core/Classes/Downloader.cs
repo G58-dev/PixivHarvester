@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 
 namespace Core.Classes
 {
-    internal class Downloader : IDownloader
+    public class Downloader : IDownloader
     {
         // Fields
 
