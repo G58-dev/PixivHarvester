@@ -97,6 +97,7 @@
             // 
             // textBoxDownloaded
             // 
+            textBoxDownloaded.Enabled = false;
             textBoxDownloaded.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBoxDownloaded.Location = new Point(15, 246);
             textBoxDownloaded.Margin = new Padding(0);
@@ -169,6 +170,7 @@
             buttonCancel.TabIndex = 6;
             buttonCancel.Text = "Cancel";
             buttonCancel.UseVisualStyleBackColor = true;
+            buttonCancel.Click += buttonCancel_Click;
             // 
             // buttonId
             // 
@@ -180,6 +182,7 @@
             buttonId.TabIndex = 3;
             buttonId.Text = "Add ID";
             buttonId.UseVisualStyleBackColor = true;
+            buttonId.Click += buttonId_Click;
             // 
             // buttonStop
             // 
@@ -191,6 +194,7 @@
             buttonStop.TabIndex = 5;
             buttonStop.Text = "Stop";
             buttonStop.UseVisualStyleBackColor = true;
+            buttonStop.Click += buttonStop_Click;
             // 
             // buttonStart
             // 
@@ -202,6 +206,7 @@
             buttonStart.TabIndex = 4;
             buttonStart.Text = "Start";
             buttonStart.UseVisualStyleBackColor = true;
+            buttonStart.Click += buttonStart_Click;
             // 
             // panelQueue
             // 
@@ -238,6 +243,7 @@
             buttonRemoveAll.TabIndex = 2;
             buttonRemoveAll.Text = "Remove All";
             buttonRemoveAll.UseVisualStyleBackColor = true;
+            buttonRemoveAll.Click += buttonRemoveAll_Click;
             // 
             // listBoxQueue
             // 
@@ -260,6 +266,7 @@
             buttonRemove.TabIndex = 1;
             buttonRemove.Text = "Remove";
             buttonRemove.UseVisualStyleBackColor = true;
+            buttonRemove.Click += buttonRemove_Click;
             // 
             // panelUserInfo
             // 
