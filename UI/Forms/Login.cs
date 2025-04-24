@@ -20,7 +20,7 @@ namespace UI.Forms
             else if (await mainForm.coreDownloader.IsRealSessionAsync(textBoxEnterSession.Text))
             {
                 mainForm.coreDownloader.InitDownloader(textBoxEnterSession.Text);
-                mainForm.LoadInnerForm(new Downloader());
+                mainForm.LoadInnerForm(new Downloader(mainForm));
                 mainForm.updateToolStripMenuItem.Enabled = true;
             }
             else

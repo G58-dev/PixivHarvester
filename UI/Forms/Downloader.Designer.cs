@@ -118,6 +118,7 @@
             buttonFolder.TabIndex = 0;
             buttonFolder.Text = "Choose Folder";
             buttonFolder.UseVisualStyleBackColor = true;
+            buttonFolder.Click += buttonFolder_Click;
             // 
             // progressBarDownloading
             // 
@@ -129,9 +130,12 @@
             // 
             // textBoxFolder
             // 
-            textBoxFolder.Font = new Font("Segoe UI", 14.25F);
+            textBoxFolder.Enabled = false;
+            textBoxFolder.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBoxFolder.Location = new Point(170, 15);
             textBoxFolder.Margin = new Padding(0);
+            textBoxFolder.MaxLength = 3000;
+            textBoxFolder.Multiline = true;
             textBoxFolder.Name = "textBoxFolder";
             textBoxFolder.Size = new Size(235, 33);
             textBoxFolder.TabIndex = 1;
