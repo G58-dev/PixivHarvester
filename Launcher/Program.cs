@@ -1,4 +1,6 @@
-namespace UI
+using UI;
+
+namespace Launcher
 {
     internal static class Program
     {

@@ -20,6 +20,7 @@ Release/
 # Publish
 publish/
 *.PublishProfiles/
+**/Properties/PublishProfiles/
 
 # Security
 *.key
