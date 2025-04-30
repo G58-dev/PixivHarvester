@@ -49,7 +49,7 @@
             panelInnerUserInfo = new Panel();
             labelUserIllustsValue = new Label();
             labelUserIdValue = new Label();
-            labelNameValue = new Label();
+            labelUsernameValue = new Label();
             labelUserIllusts = new Label();
             pictureBoxUser = new PictureBox();
             labelUserId = new Label();
@@ -107,7 +107,6 @@
             textBoxDownloaded.ScrollBars = ScrollBars.Vertical;
             textBoxDownloaded.Size = new Size(390, 125);
             textBoxDownloaded.TabIndex = 9;
-            textBoxDownloaded.WordWrap = false;
             // 
             // buttonFolder
             // 
@@ -285,7 +284,7 @@
             panelInnerUserInfo.BackColor = SystemColors.ControlLightLight;
             panelInnerUserInfo.Controls.Add(labelUserIllustsValue);
             panelInnerUserInfo.Controls.Add(labelUserIdValue);
-            panelInnerUserInfo.Controls.Add(labelNameValue);
+            panelInnerUserInfo.Controls.Add(labelUsernameValue);
             panelInnerUserInfo.Controls.Add(labelUserIllusts);
             panelInnerUserInfo.Controls.Add(pictureBoxUser);
             panelInnerUserInfo.Controls.Add(labelUserId);
@@ -317,15 +316,15 @@
             labelUserIdValue.TabIndex = 5;
             labelUserIdValue.Text = "label2";
             // 
-            // labelNameValue
+            // labelUsernameValue
             // 
-            labelNameValue.AutoSize = true;
-            labelNameValue.Font = new Font("Segoe UI", 12F);
-            labelNameValue.Location = new Point(181, 15);
-            labelNameValue.Name = "labelNameValue";
-            labelNameValue.Size = new Size(52, 21);
-            labelNameValue.TabIndex = 4;
-            labelNameValue.Text = "label1";
+            labelUsernameValue.AutoSize = true;
+            labelUsernameValue.Font = new Font("Segoe UI", 12F);
+            labelUsernameValue.Location = new Point(181, 15);
+            labelUsernameValue.Name = "labelUsernameValue";
+            labelUsernameValue.Size = new Size(52, 21);
+            labelUsernameValue.TabIndex = 4;
+            labelUsernameValue.Text = "label1";
             // 
             // labelUserIllusts
             // 
@@ -419,6 +418,6 @@
         private Button buttonStart;
         private Label labelUserIllustsValue;
         private Label labelUserIdValue;
-        private Label labelNameValue;
+        private Label labelUsernameValue;
     }
 }

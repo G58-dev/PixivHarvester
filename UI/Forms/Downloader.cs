@@ -1,9 +1,16 @@
-﻿namespace UI.Forms
+﻿using Core.Classes;
+using Core.Interfaces;
+
+namespace UI.Forms
 {
     public partial class Downloader : Form
     {
         private FolderBrowserDialog _folderBrowerDialog;
         MainForm _mainForm;
+
+        // To stop downloading images
+        private CancellationTokenSource cancellationTokenSource;
+        private CancellationToken cancellationToken;
         public Downloader(MainForm form)
         {
             InitializeComponent();
@@ -61,9 +68,39 @@
             DisableOrEnableButtons();
         }
 
-        private void buttonStart_Click(object sender, EventArgs e)
+        private async void buttonStart_Click(object sender, EventArgs e)
         {
+            buttonStart.Enabled = false;
+            buttonStop.Enabled = true;
+            buttonCancel.Enabled = true;
 
+            int userId = 0;
+
+            Int32.TryParse(listBoxQueue.Items[0].ToString(), out userId);
+
+            await _mainForm.coreDownloader.FetchUserAsync(userId);
+            listBoxQueue.Items.Remove(listBoxQueue.Items[0]);
+
+            _mainForm.coreDownloader.SaveUserToJSON();
+            await _mainForm.coreDownloader.DownloadIllustAsync(_mainForm.coreDownloader.UserWeb.BgImage);
+
+            pictureBoxUser.ImageLocation = @$"{_mainForm.coreDownloader.SavePath}\{_mainForm.coreDownloader.UserWeb.Id}\user_bg.png";
+            labelUsernameValue.Text = _mainForm.coreDownloader.UserWeb.Name;
+            labelUserIdValue.Text = _mainForm.coreDownloader.UserWeb.Id.ToString();
+            labelUserIllustsValue.Text = _mainForm.coreDownloader.UserWeb.Illusts.Count.ToString();
+
+            foreach (int illustID in _mainForm.coreDownloader.UserWeb.Illusts)
+            {
+                string originalURL = await _mainForm.coreDownloader.FetchIllustURLAsync(illustID);
+                if (originalURL == "No Image")
+                {
+                    continue;
+                }
+                else
+                {
+                    await _mainForm.coreDownloader.DownloadIllustAsync(originalURL, illustID);
+                }
+            }
         }
 
         private void buttonStop_Click(object sender, EventArgs e)
