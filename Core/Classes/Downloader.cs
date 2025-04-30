@@ -158,8 +158,6 @@ namespace Core.Classes
             // Changes the TimeZone to Japan
             DateTime japan = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(dt, "JST");
 
-            StringBuilder sb;
-
             string month = japan.Month < 10 ? $"0{japan.Month}" : japan.Month.ToString();
             string day = japan.Day < 10 ? $"0{japan.Day}" : japan.Day.ToString();
             string hour = japan.Hour < 10 ? $"0{japan.Hour}" : japan.Hour.ToString();
