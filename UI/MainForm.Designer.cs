@@ -132,7 +132,7 @@
             MaximizeBox = false;
             Name = "MainForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Pixiv Harvester | v0.3.0-indev";
+            Text = "Pixiv Harvester | v0.3.1-indev";
             menuStrip.ResumeLayout(false);
             menuStrip.PerformLayout();
             ResumeLayout(false);
