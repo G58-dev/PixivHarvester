@@ -233,6 +233,32 @@ namespace Core.Classes
                 await Task.Delay(2000);
             }
         }
+
+        public async Task DownloadAllIllusts(CancellationToken token, IProgress<int> progressBar)
+        {
+            int i = 0;
+
+            foreach (int illustID in _userWeb.Illusts)
+            {
+                string originalURL = await FetchIllustURLAsync(illustID);
+                if (originalURL == "No Image")
+                {
+                    continue;
+                }
+                else
+                {
+                    i++;
+                    var percentComplete = (i * 100) / _userWeb.Illusts.Count;
+                    progressBar.Report(percentComplete);
+                    await DownloadIllustAsync(originalURL, illustID);
+                }
+
+                token.ThrowIfCancellationRequested();
+            }
+
+            await SaveUserToJSON();
+        }
+
         public void CreateUserFolder()
         {
             string userFolderPath = @$"{SavePath}\{UserWeb.Id}";

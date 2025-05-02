@@ -126,6 +126,7 @@
             progressBarDownloading.Margin = new Padding(0);
             progressBarDownloading.Name = "progressBarDownloading";
             progressBarDownloading.Size = new Size(390, 52);
+            progressBarDownloading.Style = ProgressBarStyle.Continuous;
             progressBarDownloading.TabIndex = 8;
             // 
             // textBoxFolder

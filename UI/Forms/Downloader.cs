@@ -8,8 +8,7 @@ namespace UI.Forms
         MainForm _mainForm;
 
         // To stop downloading images
-        private CancellationTokenSource cancellationTokenSource;
-        private CancellationToken cancellationToken;
+        private CancellationTokenSource _cts;
         public Downloader(MainForm form)
         {
             InitializeComponent();
@@ -63,15 +62,24 @@ namespace UI.Forms
             }
 
             listBoxQueue.Items.Add(textBoxId.Text);
+            textBoxId.Text = "";
 
             DisableOrEnableButtons();
         }
 
         private async void buttonStart_Click(object sender, EventArgs e)
         {
+            _cts = new CancellationTokenSource();
+            var token = _cts.Token;
+            var progress = new Progress<int>(value =>
+            {
+                progressBarDownloading.Value = value;
+            });
+
             buttonStart.Enabled = false;
             buttonStop.Enabled = true;
             buttonCancel.Enabled = true;
+            labelDownloading.Text = "Downloading...";
 
             int userId = 0;
 
@@ -90,20 +98,21 @@ namespace UI.Forms
             labelUserIdValue.Text = _mainForm.coreDownloader.UserWeb.Id.ToString();
             labelUserIllustsValue.Text = _mainForm.coreDownloader.UserWeb.Illusts.Count.ToString();
 
-            foreach (int illustID in _mainForm.coreDownloader.UserWeb.Illusts)
+            try
             {
-                string originalURL = await _mainForm.coreDownloader.FetchIllustURLAsync(illustID);
-                if (originalURL == "No Image")
-                {
-                    continue;
-                }
-                else
-                {
-                    await _mainForm.coreDownloader.DownloadIllustAsync(originalURL, illustID);
-                }
+                await _mainForm.coreDownloader.DownloadAllIllusts(token, progress);
             }
-
-            _mainForm.coreDownloader.SaveUserToJSON();
+            catch (OperationCanceledException ex)
+            {
+                labelDownloading.Text = "Download cancelled.";
+                
+            }
+            finally
+            {
+                _cts.Dispose();
+                DisableOrEnableButtons();
+                progressBarDownloading.Value = 0;
+            }
         }
 
         private void buttonStop_Click(object sender, EventArgs e)
@@ -113,7 +122,9 @@ namespace UI.Forms
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
-
+            _cts.Cancel();
+            labelDownloading.Text = "Cancelling...";
+            buttonCancel.Enabled = false;
         }
 
         private void buttonRemove_Click(object sender, EventArgs e)
