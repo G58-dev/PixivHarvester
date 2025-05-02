@@ -1,6 +1,7 @@
 ﻿using System.Text;
 using System.Text.Json;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 
 namespace Core.Classes
 {
@@ -171,8 +172,15 @@ namespace Core.Classes
 
         public async Task DownloadIllustAsync(string originalURL)
         {
+            string userBg = $@"{SavePath}\{_userWeb.Id}\user_bg.png";
+
+            if (File.Exists(userBg))
+            {
+                return;
+            }
+
             HttpResponseMessage response = await _client.GetAsync(originalURL);
-            await using FileStream fileStream = new FileStream($@"{SavePath}\{_userWeb.Id}\user_bg.png", FileMode.Create);
+            await using FileStream fileStream = new FileStream(userBg, FileMode.Create);
             await response.Content.CopyToAsync(fileStream);
         }
 
@@ -225,38 +233,32 @@ namespace Core.Classes
                 await Task.Delay(2000);
             }
         }
-
-        public void SaveUserToJSON()
-        {
-            string userJson = JsonSerializer.Serialize(_userWeb); ;
-            switch (UserLocalExist())
-            {
-                case 1:
-                    Directory.CreateDirectory(@$"{SavePath}\{UserWeb.Id}");
-                    File.WriteAllText(@$"{SavePath}\{UserWeb.Id}\{UserWeb.Id}.json", userJson);
-                    break;
-                case 2:
-                    File.WriteAllText(@$"{SavePath}\{UserWeb.Id}\{UserWeb.Id}.json", userJson);
-                    UpdateUserIllust();
-                    break;
-            }
-        }
-
-        /*
-         * 1: User folder does not exist
-         * 2: User folder exist
-         */
-        public short UserLocalExist()
+        public void CreateUserFolder()
         {
             string userFolderPath = @$"{SavePath}\{UserWeb.Id}";
+            if (!Directory.Exists(userFolderPath))
+            {
+                Directory.CreateDirectory(@$"{SavePath}\{UserWeb.Id}");
+            }
+        }
+        public async Task SaveUserToJSON()
+        {
+            string userJSONPath = @$"{SavePath}\{UserWeb.Id}\{UserWeb.Id}.json";
+            _userWeb.Illusts = await FetchIllustsAsync(UserWeb.Id);
+            string userJSON = JsonSerializer.Serialize(_userWeb);
 
-            if (!Directory.Exists(userFolderPath)) { return 1; }
-
-            return 2;
+            File.WriteAllText(userJSONPath, userJSON);
         }
 
-        public void UpdateUserIllust()
+        public void UpdateUserIllusts()
         {
+            string userJSONPath = @$"{SavePath}\{UserWeb.Id}\{UserWeb.Id}.json";
+
+            if (!File.Exists(userJSONPath))
+            {
+                return;
+            }
+
             int lastIllust = GetLastIllust();
 
             string userFilePath = @$"{SavePath}\{UserWeb.Id}\{UserWeb.Id}.json";

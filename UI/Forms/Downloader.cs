@@ -80,7 +80,9 @@ namespace UI.Forms
             await _mainForm.coreDownloader.FetchUserAsync(userId);
             listBoxQueue.Items.Remove(listBoxQueue.Items[0]);
 
-            _mainForm.coreDownloader.SaveUserToJSON();
+            _mainForm.coreDownloader.CreateUserFolder();
+            _mainForm.coreDownloader.UpdateUserIllusts();
+
             await _mainForm.coreDownloader.DownloadIllustAsync(_mainForm.coreDownloader.UserWeb.BgImage);
 
             pictureBoxUser.ImageLocation = @$"{_mainForm.coreDownloader.SavePath}\{_mainForm.coreDownloader.UserWeb.Id}\user_bg.png";
@@ -100,6 +102,8 @@ namespace UI.Forms
                     await _mainForm.coreDownloader.DownloadIllustAsync(originalURL, illustID);
                 }
             }
+
+            _mainForm.coreDownloader.SaveUserToJSON();
         }
 
         private void buttonStop_Click(object sender, EventArgs e)
