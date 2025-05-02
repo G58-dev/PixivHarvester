@@ -228,13 +228,10 @@ namespace Core.Classes
                 }
 
                 iterator++;
-
-                // Delay Task to prevent Pixiv from blocking our connection for too many petitions at a fast rate.
-                await Task.Delay(2000);
             }
         }
 
-        public async Task DownloadAllIllusts(CancellationToken token, IProgress<int> progressBar)
+        public async Task DownloadAllIllusts(CancellationToken token, IProgress<int> progressBar, IProgress<string> progressDownload)
         {
             int i = 0;
 
@@ -250,6 +247,7 @@ namespace Core.Classes
                     i++;
                     var percentComplete = (i * 100) / _userWeb.Illusts.Count;
                     progressBar.Report(percentComplete);
+                    progressDownload.Report(@$"{SavePath}\{_userWeb.Id}\{illustID}");
                     await DownloadIllustAsync(originalURL, illustID);
                 }
 

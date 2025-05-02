@@ -30,7 +30,6 @@
         {
             panelDownload = new Panel();
             panelInnerDownloaded = new Panel();
-            textBoxDownloaded = new TextBox();
             buttonFolder = new Button();
             progressBarDownloading = new ProgressBar();
             textBoxFolder = new TextBox();
@@ -54,6 +53,7 @@
             pictureBoxUser = new PictureBox();
             labelUserId = new Label();
             labelName = new Label();
+            listBoxDownloaded = new ListBox();
             panelDownload.SuspendLayout();
             panelInnerDownloaded.SuspendLayout();
             panelQueue.SuspendLayout();
@@ -78,7 +78,7 @@
             // panelInnerDownloaded
             // 
             panelInnerDownloaded.BackColor = SystemColors.ControlLightLight;
-            panelInnerDownloaded.Controls.Add(textBoxDownloaded);
+            panelInnerDownloaded.Controls.Add(listBoxDownloaded);
             panelInnerDownloaded.Controls.Add(buttonFolder);
             panelInnerDownloaded.Controls.Add(progressBarDownloading);
             panelInnerDownloaded.Controls.Add(textBoxFolder);
@@ -94,19 +94,6 @@
             panelInnerDownloaded.Padding = new Padding(15);
             panelInnerDownloaded.Size = new Size(420, 386);
             panelInnerDownloaded.TabIndex = 10;
-            // 
-            // textBoxDownloaded
-            // 
-            textBoxDownloaded.Enabled = false;
-            textBoxDownloaded.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBoxDownloaded.Location = new Point(15, 246);
-            textBoxDownloaded.Margin = new Padding(0);
-            textBoxDownloaded.MaxLength = 100000;
-            textBoxDownloaded.Multiline = true;
-            textBoxDownloaded.Name = "textBoxDownloaded";
-            textBoxDownloaded.ScrollBars = ScrollBars.Vertical;
-            textBoxDownloaded.Size = new Size(390, 125);
-            textBoxDownloaded.TabIndex = 9;
             // 
             // buttonFolder
             // 
@@ -368,6 +355,17 @@
             labelName.TabIndex = 1;
             labelName.Text = "Name:";
             // 
+            // listBoxDownloaded
+            // 
+            listBoxDownloaded.Enabled = false;
+            listBoxDownloaded.FormattingEnabled = true;
+            listBoxDownloaded.Location = new Point(15, 246);
+            listBoxDownloaded.Name = "listBoxDownloaded";
+            listBoxDownloaded.Size = new Size(390, 124);
+            listBoxDownloaded.TabIndex = 9;
+            listBoxDownloaded.TabStop = false;
+            listBoxDownloaded.UseTabStops = false;
+            // 
             // Downloader
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -407,7 +405,6 @@
         private Panel panelInnerDownloaded;
         private Panel panelInnerUserInfo;
         private Panel panelInnerQueue;
-        private TextBox textBoxDownloaded;
         private Button buttonFolder;
         private ProgressBar progressBarDownloading;
         private TextBox textBoxFolder;
@@ -420,5 +417,6 @@
         private Label labelUserIllustsValue;
         private Label labelUserIdValue;
         private Label labelUsernameValue;
+        private ListBox listBoxDownloaded;
     }
 }

@@ -18,6 +18,7 @@ namespace UI.Forms
             buttonCancel.Enabled = false;
             buttonRemove.Enabled = false;
             buttonRemoveAll.Enabled = false;
+            labelDownloading.Text = "";
             _mainForm = form;
         }
 
@@ -71,9 +72,14 @@ namespace UI.Forms
         {
             _cts = new CancellationTokenSource();
             var token = _cts.Token;
-            var progress = new Progress<int>(value =>
+            var progressBar = new Progress<int>(value =>
             {
                 progressBarDownloading.Value = value;
+            });
+
+            var progressDownload = new Progress<string>(value =>
+            {
+                listBoxDownloaded.Items.Add(value);
             });
 
             buttonStart.Enabled = false;
@@ -100,18 +106,19 @@ namespace UI.Forms
 
             try
             {
-                await _mainForm.coreDownloader.DownloadAllIllusts(token, progress);
+                await _mainForm.coreDownloader.DownloadAllIllusts(token, progressBar, progressDownload);
+                labelDownloading.Text = "Download successful";
             }
             catch (OperationCanceledException ex)
             {
-                labelDownloading.Text = "Download cancelled.";
-                
+                labelDownloading.Text = "Download cancelled.";                
             }
             finally
             {
                 _cts.Dispose();
                 DisableOrEnableButtons();
                 progressBarDownloading.Value = 0;
+                listBoxDownloaded.Items.Clear();
             }
         }
 
