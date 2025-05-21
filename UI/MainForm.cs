@@ -1,5 +1,6 @@
 using UI.Forms;
 using UI.ThemeSources;
+using UI.ThemeSources.ThemedControls;
 
 namespace UI
 {
@@ -10,7 +11,7 @@ namespace UI
         public MainForm()
         {
             InitializeComponent();
-            menuStrip.Renderer = new BrowserMenuRenderer();
+            menuStrip.Renderer = new ThemedMenuStrip();
             ApplyTheme();
             Themes.ThemeChanged += ApplyTheme;
             LoadInnerForm(new Login(this)); // Loads Login page when App starts
@@ -80,36 +81,6 @@ namespace UI
             darkToolStripMenuItem.Checked = false;
             superDarkToolStripMenuItem.Checked = true;
         }
-
-        #region Class to change the colors for the menuStrip
-        public class BrowserMenuRenderer : ToolStripProfessionalRenderer
-        {
-            public BrowserMenuRenderer() : base(new BrowserColors()) { }
-        }
-        public class BrowserColors : ProfessionalColorTable
-        {
-            // MenuItemPressed (top items selected)
-            public override Color MenuItemPressedGradientBegin => Themes.Current.MenuStrip.Pressed;
-            public override Color MenuItemPressedGradientMiddle => Themes.Current.MenuStrip.Pressed;
-            public override Color MenuItemPressedGradientEnd => Themes.Current.MenuStrip.Pressed;
-
-            // MenuItemSelected (top items & inner items)
-            public override Color MenuItemSelectedGradientBegin => Themes.Current.MenuStrip.Pressed;
-            public override Color MenuItemSelectedGradientEnd => Themes.Current.MenuStrip.Pressed;
-
-            // MenuItemBorder & InnerBorder
-            public override Color MenuBorder => Themes.Current.MenuStrip.Border;
-            public override Color MenuItemBorder => Themes.Current.MenuStrip.Border;
-
-            // Image Color (left side)
-            public override Color ImageMarginGradientBegin => Themes.Current.ItemImageBackground;
-            public override Color ImageMarginGradientMiddle => Themes.Current.ItemImageBackground;
-            public override Color ImageMarginGradientEnd => Themes.Current.ItemImageBackground;
-
-            // Items background
-            public override Color ToolStripDropDownBackground => Themes.Current.ItemBackground;
-        }
-        #endregion
 
         private void creditsToolStripMenuItem_Click(object sender, EventArgs e)
         {
