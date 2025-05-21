@@ -78,21 +78,21 @@
             // 
             lightToolStripMenuItem.BackgroundImageLayout = ImageLayout.None;
             lightToolStripMenuItem.Name = "lightToolStripMenuItem";
-            lightToolStripMenuItem.Size = new Size(180, 22);
+            lightToolStripMenuItem.Size = new Size(131, 22);
             lightToolStripMenuItem.Text = "Light";
             lightToolStripMenuItem.Click += lightToolStripMenuItem_Click;
             // 
             // darkToolStripMenuItem
             // 
             darkToolStripMenuItem.Name = "darkToolStripMenuItem";
-            darkToolStripMenuItem.Size = new Size(180, 22);
+            darkToolStripMenuItem.Size = new Size(131, 22);
             darkToolStripMenuItem.Text = "Dark";
             darkToolStripMenuItem.Click += darkToolStripMenuItem_Click;
             // 
             // superDarkToolStripMenuItem
             // 
             superDarkToolStripMenuItem.Name = "superDarkToolStripMenuItem";
-            superDarkToolStripMenuItem.Size = new Size(180, 22);
+            superDarkToolStripMenuItem.Size = new Size(131, 22);
             superDarkToolStripMenuItem.Text = "Super Dark";
             superDarkToolStripMenuItem.Click += superDarkToolStripMenuItem_Click;
             // 
@@ -106,14 +106,16 @@
             // creditsToolStripMenuItem
             // 
             creditsToolStripMenuItem.Name = "creditsToolStripMenuItem";
-            creditsToolStripMenuItem.Size = new Size(112, 22);
+            creditsToolStripMenuItem.Size = new Size(180, 22);
             creditsToolStripMenuItem.Text = "Credits";
+            creditsToolStripMenuItem.Click += creditsToolStripMenuItem_Click;
             // 
             // versionToolStripMenuItem
             // 
             versionToolStripMenuItem.Name = "versionToolStripMenuItem";
-            versionToolStripMenuItem.Size = new Size(112, 22);
+            versionToolStripMenuItem.Size = new Size(180, 22);
             versionToolStripMenuItem.Text = "Version";
+            versionToolStripMenuItem.Click += versionToolStripMenuItem_Click;
             // 
             // panelMain
             // 
@@ -136,7 +138,7 @@
             MaximizeBox = false;
             Name = "MainForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Pixiv Harvester | v0.4.0-beta";
+            Text = "Pixiv Harvester | v0.4.1-beta";
             menuStrip.ResumeLayout(false);
             menuStrip.PerformLayout();
             ResumeLayout(false);

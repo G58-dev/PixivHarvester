@@ -110,5 +110,15 @@ namespace UI
             public override Color ToolStripDropDownBackground => Themes.Current.ItemBackground;
         }
         #endregion
+
+        private void creditsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Developmnet by: G58\nApp logo by: G58\nApp banner by: G58", "Credits", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void versionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show($"App version: 0.4.1-beta\nExecuting in: {Environment.OSVersion}", "Version", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }
