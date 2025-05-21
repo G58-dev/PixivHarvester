@@ -1,8 +1,8 @@
-﻿using Core.Classes;
+﻿using UI.ThemeSources;
 
 namespace UI.Forms
 {
-    public partial class Downloader : Form
+    public partial class Downloader : Form, IThemed
     {
         private FolderBrowserDialog _folderBrowerDialog;
         MainForm _mainForm;
@@ -14,12 +14,17 @@ namespace UI.Forms
             InitializeComponent();
             buttonId.Enabled = false;
             buttonStart.Enabled = false;
-            buttonStop.Enabled = false;
+            buttonStop.Enabled = true;
             buttonCancel.Enabled = false;
             buttonRemove.Enabled = false;
             buttonRemoveAll.Enabled = false;
             labelDownloading.Text = "";
+            labelUsernameValue.Text = "";
+            labelUserIdValue.Text = "";
+            labelUserIllustsValue.Text = "";
             _mainForm = form;
+            ApplyTheme();
+            Themes.ThemeChanged += ApplyTheme;
         }
 
         // Toggles the enabled state of the download and remove buttons depending on the queue's content
@@ -111,7 +116,7 @@ namespace UI.Forms
             }
             catch (OperationCanceledException ex)
             {
-                labelDownloading.Text = "Download cancelled.";                
+                labelDownloading.Text = "Download cancelled.";
             }
             finally
             {
@@ -154,6 +159,38 @@ namespace UI.Forms
             listBoxQueue.Items.Clear();
 
             DisableOrEnableButtons();
+        }
+
+        public void ApplyTheme()
+        {
+            #region Main panels & inner panels
+            panelDownload.BackColor = Themes.Current.OuterPanel;
+            panelInnerDownloaded.BackColor = Themes.Current.InnerPanel;
+            panelQueue.BackColor = Themes.Current.OuterPanel;
+            panelInnerQueue.BackColor = Themes.Current.InnerPanel;
+            panelUserInfo.BackColor = Themes.Current.OuterPanel;
+            panelInnerUserInfo.BackColor = Themes.Current.InnerPanel;
+            #endregion
+
+            #region Labels, Textboxes & Listboxes
+            labelDownloading.ForeColor = Themes.Current.Text;
+            labelName.ForeColor = Themes.Current.Text;
+            labelUsernameValue.ForeColor = Themes.Current.Text;
+            labelUserId.ForeColor = Themes.Current.Text;
+            labelUserIdValue.ForeColor = Themes.Current.Text;
+            labelUserIllusts.ForeColor = Themes.Current.Text;
+            labelUserIllustsValue.ForeColor = Themes.Current.Text;
+
+            textBoxFolder.BackColor = Themes.Current.TextBox.Disabled;
+            textBoxFolder.ForeColor = Themes.Current.Text;
+            textBoxId.BackColor = Themes.Current.TextBox.Base;
+            textBoxId.ForeColor = Themes.Current.Text;
+
+            listBoxDownloaded.BackColor = Themes.Current.ListBox.Base;
+            listBoxDownloaded.ForeColor = Themes.Current.Text;
+            listBoxQueue.BackColor = Themes.Current.ListBox.Base;
+            listBoxQueue.ForeColor = Themes.Current.Text;
+            #endregion
         }
     }
 }

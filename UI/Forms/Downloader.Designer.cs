@@ -1,4 +1,6 @@
-﻿namespace UI.Forms
+﻿using UI.ThemeSources.ThemedControls;
+
+namespace UI.Forms
 {
     partial class Downloader
     {
@@ -30,20 +32,21 @@
         {
             panelDownload = new Panel();
             panelInnerDownloaded = new Panel();
-            buttonFolder = new Button();
-            progressBarDownloading = new ProgressBar();
+            listBoxDownloaded = new ListBox();
+            buttonFolder = new ThemedButton();
+            progressBarDownloading = new ThemedProgressBar();
             textBoxFolder = new TextBox();
             labelDownloading = new Label();
             textBoxId = new TextBox();
-            buttonCancel = new Button();
-            buttonId = new Button();
-            buttonStop = new Button();
-            buttonStart = new Button();
+            buttonCancel = new ThemedButton();
+            buttonId = new ThemedButton();
+            buttonStop = new ThemedButton();
+            buttonStart = new ThemedButton();
             panelQueue = new Panel();
             panelInnerQueue = new Panel();
-            buttonRemoveAll = new Button();
+            buttonRemoveAll = new ThemedButton();
             listBoxQueue = new ListBox();
-            buttonRemove = new Button();
+            buttonRemove = new ThemedButton();
             panelUserInfo = new Panel();
             panelInnerUserInfo = new Panel();
             labelUserIllustsValue = new Label();
@@ -53,7 +56,6 @@
             pictureBoxUser = new PictureBox();
             labelUserId = new Label();
             labelName = new Label();
-            listBoxDownloaded = new ListBox();
             panelDownload.SuspendLayout();
             panelInnerDownloaded.SuspendLayout();
             panelQueue.SuspendLayout();
@@ -95,13 +97,25 @@
             panelInnerDownloaded.Size = new Size(420, 386);
             panelInnerDownloaded.TabIndex = 10;
             // 
+            // listBoxDownloaded
+            // 
+            listBoxDownloaded.BorderStyle = BorderStyle.FixedSingle;
+            listBoxDownloaded.Enabled = false;
+            listBoxDownloaded.FormattingEnabled = true;
+            listBoxDownloaded.Location = new Point(15, 246);
+            listBoxDownloaded.Name = "listBoxDownloaded";
+            listBoxDownloaded.Size = new Size(390, 122);
+            listBoxDownloaded.TabIndex = 9;
+            listBoxDownloaded.TabStop = false;
+            listBoxDownloaded.UseTabStops = false;
+            // 
             // buttonFolder
             // 
             buttonFolder.Font = new Font("Segoe UI", 14.25F);
             buttonFolder.Location = new Point(15, 15);
             buttonFolder.Margin = new Padding(0);
             buttonFolder.Name = "buttonFolder";
-            buttonFolder.Size = new Size(142, 33);
+            buttonFolder.Size = new Size(145, 33);
             buttonFolder.TabIndex = 0;
             buttonFolder.Text = "Choose Folder";
             buttonFolder.UseVisualStyleBackColor = true;
@@ -109,6 +123,7 @@
             // 
             // progressBarDownloading
             // 
+            progressBarDownloading.BackColor = SystemColors.ControlLight;
             progressBarDownloading.Location = new Point(15, 186);
             progressBarDownloading.Margin = new Padding(0);
             progressBarDownloading.Name = "progressBarDownloading";
@@ -118,14 +133,16 @@
             // 
             // textBoxFolder
             // 
+            textBoxFolder.BorderStyle = BorderStyle.FixedSingle;
+            textBoxFolder.Cursor = Cursors.No;
             textBoxFolder.Enabled = false;
             textBoxFolder.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBoxFolder.Location = new Point(170, 15);
+            textBoxFolder.Location = new Point(173, 15);
             textBoxFolder.Margin = new Padding(0);
             textBoxFolder.MaxLength = 3000;
             textBoxFolder.Multiline = true;
             textBoxFolder.Name = "textBoxFolder";
-            textBoxFolder.Size = new Size(235, 33);
+            textBoxFolder.Size = new Size(232, 33);
             textBoxFolder.TabIndex = 1;
             // 
             // labelDownloading
@@ -140,11 +157,12 @@
             // 
             // textBoxId
             // 
-            textBoxId.Font = new Font("Segoe UI", 14.25F);
+            textBoxId.BorderStyle = BorderStyle.FixedSingle;
+            textBoxId.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBoxId.Location = new Point(15, 57);
             textBoxId.Margin = new Padding(0);
             textBoxId.Name = "textBoxId";
-            textBoxId.Size = new Size(235, 33);
+            textBoxId.Size = new Size(235, 35);
             textBoxId.TabIndex = 2;
             // 
             // buttonCancel
@@ -234,13 +252,14 @@
             // 
             // listBoxQueue
             // 
+            listBoxQueue.BorderStyle = BorderStyle.FixedSingle;
             listBoxQueue.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             listBoxQueue.FormattingEnabled = true;
             listBoxQueue.HorizontalScrollbar = true;
             listBoxQueue.Location = new Point(15, 15);
             listBoxQueue.Margin = new Padding(0);
             listBoxQueue.Name = "listBoxQueue";
-            listBoxQueue.Size = new Size(160, 204);
+            listBoxQueue.Size = new Size(160, 202);
             listBoxQueue.TabIndex = 3;
             // 
             // buttonRemove
@@ -355,17 +374,6 @@
             labelName.TabIndex = 1;
             labelName.Text = "Name:";
             // 
-            // listBoxDownloaded
-            // 
-            listBoxDownloaded.Enabled = false;
-            listBoxDownloaded.FormattingEnabled = true;
-            listBoxDownloaded.Location = new Point(15, 246);
-            listBoxDownloaded.Name = "listBoxDownloaded";
-            listBoxDownloaded.Size = new Size(390, 124);
-            listBoxDownloaded.TabIndex = 9;
-            listBoxDownloaded.TabStop = false;
-            listBoxDownloaded.UseTabStops = false;
-            // 
             // Downloader
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -395,8 +403,8 @@
         private Panel panelDownload;
         private Panel panelQueue;
         private Panel panelUserInfo;
-        private Button buttonRemoveAll;
-        private Button buttonRemove;
+        private ThemedButton buttonRemoveAll;
+        private ThemedButton buttonRemove;
         private Label labelUserIllusts;
         private Label labelUserId;
         private Label labelName;
@@ -405,15 +413,15 @@
         private Panel panelInnerDownloaded;
         private Panel panelInnerUserInfo;
         private Panel panelInnerQueue;
-        private Button buttonFolder;
-        private ProgressBar progressBarDownloading;
+        private ThemedButton buttonFolder;
+        private ThemedProgressBar progressBarDownloading;
         private TextBox textBoxFolder;
         private Label labelDownloading;
         private TextBox textBoxId;
-        private Button buttonCancel;
-        private Button buttonId;
-        private Button buttonStop;
-        private Button buttonStart;
+        private ThemedButton buttonCancel;
+        private ThemedButton buttonId;
+        private ThemedButton buttonStop;
+        private ThemedButton buttonStart;
         private Label labelUserIllustsValue;
         private Label labelUserIdValue;
         private Label labelUsernameValue;

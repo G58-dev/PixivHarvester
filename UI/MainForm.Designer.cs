@@ -76,21 +76,25 @@
             // 
             // lightToolStripMenuItem
             // 
+            lightToolStripMenuItem.BackgroundImageLayout = ImageLayout.None;
             lightToolStripMenuItem.Name = "lightToolStripMenuItem";
-            lightToolStripMenuItem.Size = new Size(131, 22);
+            lightToolStripMenuItem.Size = new Size(180, 22);
             lightToolStripMenuItem.Text = "Light";
+            lightToolStripMenuItem.Click += lightToolStripMenuItem_Click;
             // 
             // darkToolStripMenuItem
             // 
             darkToolStripMenuItem.Name = "darkToolStripMenuItem";
-            darkToolStripMenuItem.Size = new Size(131, 22);
+            darkToolStripMenuItem.Size = new Size(180, 22);
             darkToolStripMenuItem.Text = "Dark";
+            darkToolStripMenuItem.Click += darkToolStripMenuItem_Click;
             // 
             // superDarkToolStripMenuItem
             // 
             superDarkToolStripMenuItem.Name = "superDarkToolStripMenuItem";
-            superDarkToolStripMenuItem.Size = new Size(131, 22);
+            superDarkToolStripMenuItem.Size = new Size(180, 22);
             superDarkToolStripMenuItem.Text = "Super Dark";
+            superDarkToolStripMenuItem.Click += superDarkToolStripMenuItem_Click;
             // 
             // aboutToolStripMenuItem
             // 
@@ -144,13 +148,13 @@
         private MenuStrip menuStrip;
         private ToolStripMenuItem pHPSESSIDToolStripMenuItem;
         private ToolStripMenuItem themeToolStripMenuItem;
-        private ToolStripMenuItem lightToolStripMenuItem;
-        private ToolStripMenuItem darkToolStripMenuItem;
-        private ToolStripMenuItem superDarkToolStripMenuItem;
         private ToolStripMenuItem aboutToolStripMenuItem;
         private ToolStripMenuItem creditsToolStripMenuItem;
         private ToolStripMenuItem versionToolStripMenuItem;
         private Panel panelMain;
         public ToolStripMenuItem updateToolStripMenuItem;
+        private ToolStripMenuItem lightToolStripMenuItem;
+        private ToolStripMenuItem darkToolStripMenuItem;
+        private ToolStripMenuItem superDarkToolStripMenuItem;
     }
 }

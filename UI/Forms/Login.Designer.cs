@@ -1,4 +1,6 @@
-﻿namespace UI.Forms
+﻿using UI.ThemeSources.ThemedControls;
+
+namespace UI.Forms
 {
     partial class Login
     {
@@ -28,7 +30,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            buttonLogIn = new Button();
+            buttonLogIn = new ThemedButton();
             panel1 = new Panel();
             pictureBoxIcon = new PictureBox();
             textBoxEnterSession = new TextBox();
@@ -76,6 +78,7 @@
             // 
             // textBoxEnterSession
             // 
+            textBoxEnterSession.BorderStyle = BorderStyle.FixedSingle;
             textBoxEnterSession.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBoxEnterSession.Location = new Point(26, 257);
             textBoxEnterSession.Name = "textBoxEnterSession";
@@ -131,7 +134,7 @@
 
         #endregion
 
-        private Button buttonLogIn;
+        private ThemedButton buttonLogIn;
         private Panel panel1;
         private PictureBox pictureBoxIcon;
         private TextBox textBoxEnterSession;
