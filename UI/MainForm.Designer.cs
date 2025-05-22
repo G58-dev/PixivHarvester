@@ -106,14 +106,14 @@
             // creditsToolStripMenuItem
             // 
             creditsToolStripMenuItem.Name = "creditsToolStripMenuItem";
-            creditsToolStripMenuItem.Size = new Size(180, 22);
+            creditsToolStripMenuItem.Size = new Size(112, 22);
             creditsToolStripMenuItem.Text = "Credits";
             creditsToolStripMenuItem.Click += creditsToolStripMenuItem_Click;
             // 
             // versionToolStripMenuItem
             // 
             versionToolStripMenuItem.Name = "versionToolStripMenuItem";
-            versionToolStripMenuItem.Size = new Size(180, 22);
+            versionToolStripMenuItem.Size = new Size(112, 22);
             versionToolStripMenuItem.Text = "Version";
             versionToolStripMenuItem.Click += versionToolStripMenuItem_Click;
             // 

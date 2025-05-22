@@ -44,5 +44,11 @@ namespace UI.Forms
             textBoxEnterSession.ForeColor = Themes.Current.Text;
             #endregion
         }
+
+        protected override void OnFormClosed(FormClosedEventArgs e)
+        {
+            Themes.ThemeChanged -= ApplyTheme;
+            base.OnFormClosed(e);
+        }
     }
 }

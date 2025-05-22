@@ -1,6 +1,7 @@
 using UI.Forms;
 using UI.ThemeSources;
 using UI.ThemeSources.ThemedControls;
+using UI.Settings;
 
 namespace UI
 {
@@ -12,11 +13,13 @@ namespace UI
         {
             InitializeComponent();
             menuStrip.Renderer = new ThemedMenuStrip();
+            Themes.ChangeTheme(XmlSettings.ReadTheme());
             ApplyTheme();
             Themes.ThemeChanged += ApplyTheme;
             LoadInnerForm(new Login(this)); // Loads Login page when App starts
             updateToolStripMenuItem.Enabled = false;
-            lightToolStripMenuItem.Checked = true;
+            checkedThemeButtons();
+            
         }
 
         public void LoadInnerForm(Form innerForm)
@@ -51,6 +54,20 @@ namespace UI
             creditsToolStripMenuItem.ForeColor = Themes.Current.Text;
             versionToolStripMenuItem.ForeColor = Themes.Current.Text;
         }
+
+        private void checkedThemeButtons()
+        {
+            switch (Themes.Current.CurrentTheme)
+            {
+                case ThemeType.Light:
+                    lightToolStripMenuItem.Checked = true; break;
+                case ThemeType.Dark:
+                    darkToolStripMenuItem.Checked = true; break;
+                case ThemeType.SuperDark:
+                    superDarkToolStripMenuItem.Checked = true; break;
+            }
+        }
+
 
         private void updateToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -90,6 +107,13 @@ namespace UI
         private void versionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show($"App version: 0.4.1-beta\nExecuting in: {Environment.OSVersion}", "Version", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        protected override void OnFormClosed(FormClosedEventArgs e)
+        {
+            Themes.ThemeChanged -= ApplyTheme;
+            XmlSettings.WriteTheme(Themes.Current.CurrentTheme);
+            base.OnFormClosed(e);
         }
     }
 }
