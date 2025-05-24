@@ -1,4 +1,5 @@
-﻿using UI.ThemeSources.ControlConfig;
+﻿using UI.Settings;
+using UI.ThemeSources.ControlConfig;
 
 namespace UI.ThemeSources
 {
@@ -68,7 +69,7 @@ namespace UI.ThemeSources
             }
         };
         
-        private static ThemeColors _current = themes[ThemeType.Light];
+        private static ThemeColors _current = themes[XmlSettings.ReadTheme()];
         public static ThemeColors Current => _current;
 
         public static void ChangeTheme(ThemeType theme)

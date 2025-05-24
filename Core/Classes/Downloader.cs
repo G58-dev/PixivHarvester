@@ -147,11 +147,21 @@ namespace Core.Classes
 
             string embedURL = Regex.Match(result, "<meta property=\"og:image\" content=\"(.*?)\" data-next-head=\"\"/>").Groups[1].Value;
             string unixTimestamp = Regex.Match(embedURL, @"mdate=(\d+)").Groups[1].Value;
-
+            long timestamp;
 
             // Converts the Unix timestamp to a DateTime object
-            if (!long.TryParse(unixTimestamp, out long timestamp)) { return "No Image"; }
+            if (!long.TryParse(unixTimestamp, out timestamp))
+            {
+                embedURL = Regex.Match(result, "oembed\" href=\"(.*?)\"").Groups[1].Value;
+                response = await _client.GetAsync(embedURL);
+                result = await response.Content.ReadAsStringAsync();
+                unixTimestamp = Regex.Match(result, @"mdate=(\d+)").Groups[1].Value;
 
+                if (!long.TryParse(unixTimestamp, out timestamp))
+                {
+                    return "No Image";
+                }
+            }
 
             DateTime dt = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
             dt = dt.AddSeconds(timestamp);

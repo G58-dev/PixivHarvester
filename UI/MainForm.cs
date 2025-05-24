@@ -13,7 +13,6 @@ namespace UI
         {
             InitializeComponent();
             menuStrip.Renderer = new ThemedMenuStrip();
-            Themes.ChangeTheme(XmlSettings.ReadTheme());
             ApplyTheme();
             Themes.ThemeChanged += ApplyTheme;
             LoadInnerForm(new Login(this)); // Loads Login page when App starts
